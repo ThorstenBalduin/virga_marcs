@@ -227,7 +227,7 @@ if __name__ == '__main__':
             dtype="f8",
             chunks=(1, n_wl),
             compression="gzip",
-            compression_opts=4,
+            compression_opts=9,
         )
         qsca_ds = f.create_dataset(
             "qsca",
@@ -235,7 +235,7 @@ if __name__ == '__main__':
             dtype="f8",
             chunks=(1, n_wl),
             compression="gzip",
-            compression_opts=4,
+            compression_opts=9,
         )
 
         for i in range(n_sizes):
