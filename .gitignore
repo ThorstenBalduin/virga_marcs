@@ -16,3 +16,4 @@ dist/
 
 # Mac files
 *.DS_Store
+Mie_data/*
