@@ -1,4 +1,6 @@
 import numpy as np
+#Based on this approach Kzz
+#https://ui.adsabs.harvard.edu/abs/2022ExA....53..279M/abstract
 
 # physical constants
 k_B = 1.381e-16 #erg/K
