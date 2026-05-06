@@ -78,10 +78,10 @@ def interpolate_refractive_index(wavelengths_data, real_part, imag_part, wavelen
 
 def mie_calc(args):
     
-    sizes, wavelengths_grid, n_grid, k_grid = args
+    size, wavelength, n_grid, k_grid = args
     
     # Define x_array and geometric cross-section
-    x_array = 2 * np.pi * size / wavelengths_grid # both in microns
+    x_array = 2 * np.pi * size / wavelength # both in microns
     
     # Define the complex refractive index array
     complex_refractive_indexs = n_grid - 1j * k_grid
@@ -91,7 +91,7 @@ def mie_calc(args):
     
     qabs = qext - qsca  # Absorption efficiency, wanted for MARCS
     
-    return qabs, qsca
+    return qabs, qsca # floats for given wavelength and size
 
 
 if __name__ == '__main__':
@@ -177,7 +177,7 @@ if __name__ == '__main__':
         plt.show()
     
     # Create argument list for parallel processing
-    args_list = [(size, wavelengths_grid, n_grid, k_grid) for size in sizes]
+    args_list = [(size, wavelength, n_grid, k_grid) for size in sizes for wavelength in wavelengths_grid]
 
     # Run Mie calculations in parallel
     print("Running Mie calculations in parallel...")
@@ -203,6 +203,3 @@ if __name__ == '__main__':
                 f.write(f"{size:.8e}\t{wl:.8e}\t{qabs[j]:.8e}\t{qsca[j]:.8e}\n")
 
     print("Mie calculations complete.")
-    
-    
-    quit()
