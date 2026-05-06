@@ -1,0 +1,126 @@
+ITEMAX= 50     NPRINT=  0     NEWMOD=  0     NOARCH=  0     JONTYP=3       IDUST =0
+JUMP  =  4     OS/ODF=OS      MOLOLD=  1     NLTE  =  0     PP/SPH=PP
+TEFF  =400     GRAV  =2.95    MODEL =                       M/MSN = 1
+NOCONV= 16     XMAX  =1.0E+08 TAUM  =300.0   FACPLY=1.0     METBL =  0
+ILINE =  1     AMLOSS=1.5E-08 MOLTSJ=  1     LINCIA=  0     ISPEC =  1
+MIHAL = 40     KONSG =  0     KORT  =5       KPP   = 2.5    TCONV = 1 
+lops  =  0     nops  =  1     dpein =0.005   dtin  =0.005   METPE = 2
+PALFA =1.500   PBETA =0.000   PNY   =8.000   PY    =0.076    VFIX =0.000
+MYPNTS=  4     NCORE =  5     KDIFF =  3     
+IRRAD = 0      STEFF =5778.   RSTAR =1.00    SMAJOR=1.      FACTOR=2.0     SPECTR=1       SPECSC=1.0E+0 
+SURFAC= 0      TSURF =300.0   ALBEDO=0.07    NCH4  =0   
+NONEQ = 0      PHOTO = 0
+DTMIN =1.0E-16 DTMAX =1.0E+05 tMAX  =1.0E+08 DTINC =1.01
+KROMEO= 1      KDEBUG= 1      KROMER= 1
+LOGTAU=-5.00   DIFFER=0.15
+LOGTAU=-3.50   DIFFER=0.15
+LOGTAU=-0.20   DIFFER=0.10
+LOGTAU=-0.10   DIFFER=0.15
+LOGTAU= 2.00   DIFFER=0.10
+LOGTAU= 2.50
+ &abundances  sunz='y', zscale=    1.00000, abundatms_inp=  0.    12.000000000000
+ &end
+   20
+   3000.0     1
+   3600.0     1
+   4000.0     1
+   5999.0     1
+   6001.0     1
+   7999.0     1
+   8001.0     1
+   9999.0     1
+  10001.0     1
+  11999.0     1
+  15499.0     1
+  15701.0     1
+  16299.0     1
+  16301.0     1
+  16899.0     1
+  17101.0     1
+  26899.0     1
+  39101.0     1
+  50899.0     1
+  69101.0
+   73
+    800.0     4
+   1000.0     4
+   1300.0     4
+   1526.0     4
+   1620.0     2
+   1986.0     2
+   2076.0     4
+   2515.0     4
+   3000.0     1
+   3100.0     1
+   3200.0     1
+   3300.0     1
+   3400.0     1
+   3500.0     1
+   3600.0     1
+   3700.0     1
+   3800.0     1
+   3900.0     1
+   4000.0     1
+   4100.0     1
+   4200.0     1
+   4300.0     1
+   4400.0     1
+   4500.0     1
+   4600.0     1
+   4700.0     1
+   4800.0     1
+   4900.0     1
+   5000.0     1
+   5100.0     1
+   5200.0     1
+   5300.0     1
+   5400.0     1
+   5500.0     1
+   5600.0     1
+   5700.0     1
+   5800.0     1
+   5900.0     1
+   6000.0     1
+   6100.0     1
+   6200.0     1
+   6300.0     1
+   6400.0     1
+   6500.0     1
+   6600.0     1
+   6700.0     1
+   6800.0     1
+   6900.0     1
+   7000.0     1
+   7100.0     1
+   7200.0     4
+   7999.0     1
+   8001.0     1
+   9999.0     1
+  10001.0     1
+  11999.0     1
+  12001.0     1
+  13999.0     1
+  14001.0     1
+  15499.0     1
+  15701.0     1
+  16299.0     1
+  16301.0     1
+  16899.0     1
+  17101.0     1
+  26899.0     1
+  39101.0     1
+  50899.0     1
+  69101.0     2
+  80000.0     4
+ 150000.0     4
+ 250000.0     4
+ 400000.0
+ &inputos  
+losresl=  1, osresl=    15000.0,
+ wnos_first=    400.000, wnos_last=    80000.0, kos_step= 10
+ &end
+ &outlist  masslinf=  0
+ &end
+metpe=2 ~use pe(k)=ppel(k) from GGchem for opacities and pe(k)from SOLVE (/JON) for convergence.
+metpe=1 ~use pe(k)from SOLVE (/JON) for both opacities and convergence/iterations.
+LOGTAU=-5.00   DIFFER=0.15

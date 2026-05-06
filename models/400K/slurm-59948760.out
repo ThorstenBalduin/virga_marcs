@@ -1,0 +1,30 @@
+mkdir: cannot create directory ‘./models/K2_18b/test_400K/’: File exists
+cp: cannot stat './models/K2_18b/test_400K/krome_flux_rad.dat': No such file or directory
+cp: cannot stat '/groups/astro/mhundrup/MARCS//var/spool/slurmd/job59948760/slurm_script': No such file or directory
+ Irradiation is turned off
+ Non-equilibrium Chemistry is turned off
+ Metallicity is    1.00000000000000       time(s) solar.
+ molecules/atoms included are: 
+ SO2 TiH CO2 OH  CrH CH  AlClZrO PO  NaClSiS NO  LiF HCN C3  C2H2MgH TiO CaH 
+ SiO LiClPH3 H2  C2  KCl HCl CP  LiH NaH AlF FeH BeH MgF CaF CH4 CO  CN  H2CO
+ NH3 AlO VO  SiH PN  CS  KF  H2O PS  SN  AlH NaF HS  NH  Al  Be  Ca  Cl  C   
+ Cr  Fe  F   K   Li  Mg  Na  N   O   P   Si  S   Ti  V   Zr  O2  O3  
+ Initiation finished.
+ 
+ Iteration #             1 started
+ Total time spent:  0:00:05
+ Current Teff...    398.891700095514     
+ Max corr. to T wanted was     -0.5 K for iteration   1
+ Maximum correction applied was   0.5 for applied kort = 5
+ 
+ Iteration #             2 started
+ Total time spent:  0:00:22
+ Current Teff...    398.890269064004     
+ Max corr. to T wanted was     -0.2 K for iteration   2
+ Maximum correction applied was   0.2 for applied kort = 5
+ in archiv; k,t,pe,ppel =   1 173.118   0.788E-64   0.885-104
+ in archiv; k,t,pe,ppel =  531057.640   0.204E-06   0.336E-07
+ Total time spent:  0:00:46
+ 
+ Successful termination of execution!
+ 

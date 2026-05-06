@@ -1,0 +1,318 @@
+cp: cannot stat './models/K2_18b/krome_flux_rad.dat': No such file or directory
+cp: cannot stat '/groups/astro/mhundrup/MARCS//var/spool/slurmd/job59947845/slurm_script': No such file or directory
+ Irradiation is turned off
+ Non-equilibrium Chemistry is turned off
+ Metallicity is    1.00000000000000       time(s) solar.
+ molecules/atoms included are: 
+ SO2 TiH CO2 OH  CrH CH  AlClZrO PO  NaClSiS NO  LiF HCN C3  C2H2MgH TiO CaH 
+ SiO LiClPH3 H2  C2  KCl HCl CP  LiH NaH AlF FeH BeH MgF CaF CH4 CO  CN  H2CO
+ NH3 AlO VO  SiH PN  CS  KF  H2O PS  SN  AlH NaF HS  NH  Al  Be  Ca  Cl  C   
+ Cr  Fe  F   K   Li  Mg  Na  N   O   P   Si  S   Ti  V   Zr  O2  O3  
+ Initiation finished.
+ 
+ Iteration #             1 started
+ Total time spent:  0:00:05
+ Current Teff...    449.840190388835     
+ Max corr. to T wanted was   -217.7 K for iteration   1
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #             2 started
+ Total time spent:  0:00:22
+ Current Teff...    446.648183024772     
+ Max corr. to T wanted was   -224.2 K for iteration   2
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #             3 started
+ Total time spent:  0:00:40
+ Current Teff...    443.415603403720     
+ Max corr. to T wanted was   -234.2 K for iteration   3
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #             4 started
+ Total time spent:  0:00:58
+ Current Teff...    440.284617130699     
+ Max corr. to T wanted was   -204.3 K for iteration   4
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #             5 started
+ Total time spent:  0:01:16
+ Current Teff...    437.194886805422     
+ Max corr. to T wanted was   -212.2 K for iteration   5
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #             6 started
+ Total time spent:  0:01:34
+ Current Teff...    434.145279756856     
+ Max corr. to T wanted was   -224.5 K for iteration   6
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #             7 started
+ Total time spent:  0:01:52
+ Current Teff...    431.146352531855     
+ Max corr. to T wanted was   -241.6 K for iteration   7
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #             8 started
+ Total time spent:  0:02:10
+ Current Teff...    428.181147437581     
+ Max corr. to T wanted was   -251.6 K for iteration   8
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #             9 started
+ Total time spent:  0:02:28
+ Current Teff...    425.184033187280     
+ Max corr. to T wanted was   -246.8 K for iteration   9
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            10 started
+ Total time spent:  0:02:46
+ Current Teff...    422.248387194328     
+ Max corr. to T wanted was   -209.9 K for iteration  10
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            11 started
+ Total time spent:  0:03:04
+ Current Teff...    419.367754978301     
+ Max corr. to T wanted was   -202.8 K for iteration  11
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            12 started
+ Total time spent:  0:03:22
+ Current Teff...    416.561093049811     
+ Max corr. to T wanted was   -206.3 K for iteration  12
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            13 started
+ Total time spent:  0:03:40
+ Current Teff...    413.847481140214     
+ Max corr. to T wanted was   -206.5 K for iteration  13
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            14 started
+ Total time spent:  0:03:59
+ Current Teff...    411.235697694530     
+ Max corr. to T wanted was   -203.0 K for iteration  14
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            15 started
+ Total time spent:  0:04:17
+ Current Teff...    408.736450281569     
+ Max corr. to T wanted was   -197.4 K for iteration  15
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            16 started
+ Total time spent:  0:04:35
+ Current Teff...    406.655808448072     
+ Max corr. to T wanted was   -168.9 K for iteration  16
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            17 started
+ Total time spent:  0:04:53
+ Current Teff...    405.078011696403     
+ Max corr. to T wanted was   -173.6 K for iteration  17
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            18 started
+ Total time spent:  0:05:11
+ Current Teff...    402.886835343037     
+ Max corr. to T wanted was   -159.7 K for iteration  18
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            19 started
+ Total time spent:  0:05:29
+ Current Teff...    401.067297978236     
+ Max corr. to T wanted was   -142.4 K for iteration  19
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            20 started
+ Total time spent:  0:05:47
+ Current Teff...    400.137418142506     
+ Max corr. to T wanted was   -137.6 K for iteration  20
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            21 started
+ Total time spent:  0:06:05
+ Current Teff...    399.325049522168     
+ Max corr. to T wanted was   -130.0 K for iteration  21
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            22 started
+ Total time spent:  0:06:23
+ Current Teff...    399.039700487219     
+ Max corr. to T wanted was   -123.2 K for iteration  22
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            23 started
+ Total time spent:  0:06:41
+ Current Teff...    398.963996433613     
+ Max corr. to T wanted was   -116.1 K for iteration  23
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            24 started
+ Total time spent:  0:06:59
+ Current Teff...    398.917282186843     
+ Max corr. to T wanted was   -108.7 K for iteration  24
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            25 started
+ Total time spent:  0:07:18
+ Current Teff...    398.907069512699     
+ Max corr. to T wanted was   -102.8 K for iteration  25
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            26 started
+ Total time spent:  0:07:36
+ Current Teff...    398.794584893593     
+ Max corr. to T wanted was    -99.5 K for iteration  26
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            27 started
+ Total time spent:  0:07:54
+ Current Teff...    398.763704430675     
+ Max corr. to T wanted was    -74.9 K for iteration  27
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            28 started
+ Total time spent:  0:08:12
+ Current Teff...    398.875351841210     
+ Max corr. to T wanted was    -83.3 K for iteration  28
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            29 started
+ Total time spent:  0:08:30
+ Current Teff...    398.951393710093     
+ Max corr. to T wanted was    -82.1 K for iteration  29
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            30 started
+ Total time spent:  0:08:48
+ Current Teff...    398.851437893102     
+ Max corr. to T wanted was    -77.6 K for iteration  30
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            31 started
+ Total time spent:  0:09:06
+ Current Teff...    398.802890232208     
+ Max corr. to T wanted was    -72.5 K for iteration  31
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            32 started
+ Total time spent:  0:09:24
+ Current Teff...    398.845050497716     
+ Max corr. to T wanted was    -67.6 K for iteration  32
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            33 started
+ Total time spent:  0:09:42
+ Current Teff...    398.871959901061     
+ Max corr. to T wanted was    -62.5 K for iteration  33
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            34 started
+ Total time spent:  0:10:00
+ Current Teff...    398.882170949490     
+ Max corr. to T wanted was    -58.1 K for iteration  34
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            35 started
+ Total time spent:  0:10:18
+ Current Teff...    398.888804641873     
+ Max corr. to T wanted was    -53.4 K for iteration  35
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            36 started
+ Total time spent:  0:10:37
+ Current Teff...    398.889515236694     
+ Max corr. to T wanted was    -48.6 K for iteration  36
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            37 started
+ Total time spent:  0:10:55
+ Current Teff...    398.891324033359     
+ Max corr. to T wanted was    -46.1 K for iteration  37
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            38 started
+ Total time spent:  0:11:13
+ Current Teff...    398.890371055039     
+ Max corr. to T wanted was    -42.3 K for iteration  38
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            39 started
+ Total time spent:  0:11:31
+ Current Teff...    398.890959104756     
+ Max corr. to T wanted was    -37.9 K for iteration  39
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            40 started
+ Total time spent:  0:11:49
+ Current Teff...    398.890523249586     
+ Max corr. to T wanted was    -34.1 K for iteration  40
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            41 started
+ Total time spent:  0:12:07
+ Current Teff...    398.891729148973     
+ Max corr. to T wanted was    -30.3 K for iteration  41
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            42 started
+ Total time spent:  0:12:25
+ Current Teff...    398.890776915669     
+ Max corr. to T wanted was    -26.4 K for iteration  42
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            43 started
+ Total time spent:  0:12:43
+ Current Teff...    398.891745222368     
+ Max corr. to T wanted was    -22.9 K for iteration  43
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            44 started
+ Total time spent:  0:13:01
+ Current Teff...    398.890726421859     
+ Max corr. to T wanted was    -19.5 K for iteration  44
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            45 started
+ Total time spent:  0:13:19
+ Current Teff...    398.891605505928     
+ Max corr. to T wanted was    -16.0 K for iteration  45
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            46 started
+ Total time spent:  0:13:37
+ Current Teff...    398.890867190170     
+ Max corr. to T wanted was    -12.6 K for iteration  46
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            47 started
+ Total time spent:  0:13:55
+ Current Teff...    398.891767288328     
+ Max corr. to T wanted was     -9.6 K for iteration  47
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            48 started
+ Total time spent:  0:14:14
+ Current Teff...    398.890815392003     
+ Max corr. to T wanted was     -6.6 K for iteration  48
+ Maximum correction applied was   5.0 for applied kort = 5
+ 
+ Iteration #            49 started
+ Total time spent:  0:14:32
+ Current Teff...    398.891689001375     
+ Max corr. to T wanted was     -3.6 K for iteration  49
+ Maximum correction applied was   3.6 for applied kort = 5
+ 
+ Iteration #            50 started
+ Total time spent:  0:14:50
+ Current Teff...    398.891070926396     
+ Max corr. to T wanted was     -1.3 K for iteration  50
+ Maximum correction applied was   1.3 for applied kort = 5
+ in archiv; k,t,pe,ppel =   1 173.117   0.788E-64   0.886-104
+ in archiv; k,t,pe,ppel =  531058.366   0.207E-06   0.356E-07
+ Total time spent:  0:15:14
+ 
+ Successful termination of execution!
+ 
+ WARNING: Maximum number of iterations reached

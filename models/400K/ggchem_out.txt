@@ -1,0 +1,2124 @@
+ H He C N O Na Mg Si F Fe Al Ca Cr Ti S Cl K Li V Zr Be P el
+ dispol_BarklemCollet.dat                ! dispol_file
+ dispol_StockKitzmann_withoutTsuji.dat   ! dispol_file2
+ dispol_WoitkeRefit.dat                  ! dispol_file3
+ 0                     ! abund_pick
+ 0                    ! verbose
+ .false.               ! model_eqcond
+ 0                     ! model_dim  (0,1,2)
+ .true.                ! model_pconst
+    1057.64008265317                      ! Tmax [K]
+    13.3928007149131                         ! pmax [bar]
+ 
+ elemental abundances and masses ...
+ ===================================
+ 
+ read element abundances from abund_drift.in ...
+ H    12.0000000000000000000000000000000      
+ Element H 
+ EPS    12.0000000000000000000000000000000      
+ He   10.9300000000000000000000000000000      
+ Element He
+ EPS    10.9300000000000000000000000000000      
+ Li   1.05000000000000000000000000000000      
+ Element Li
+ EPS    1.05000000000000000000000000000000      
+ Be   1.38000000000000000000000000000000      
+ Element Be
+ EPS    1.38000000000000000000000000000000      
+ B    2.70000000000000000000000000000000      
+ Element B 
+ EPS    2.70000000000000000000000000000000      
+ C    8.49000000000000000000000000000000      
+ Element C 
+ EPS    8.49000000000000000000000000000000      
+ N    7.78000000000000000000000000000000      
+ Element N 
+ EPS    7.78000000000000000000000000000000      
+ O    8.74000000000000000000000000000000      
+ Element O 
+ EPS    8.74000000000000000000000000000000      
+ F    4.56000000000000000000000000000000      
+ Element F 
+ EPS    4.56000000000000000000000000000000      
+ Ne   7.84000000000000000000000000000000      
+ Element Ne
+ EPS    7.84000000000000000000000000000000      
+ Na   6.24000000000000000000000000000000      
+ Element Na
+ EPS    6.24000000000000000000000000000000      
+ Mg   7.57000000000000000000000000000000      
+ Element Mg
+ EPS    7.57000000000000000000000000000000      
+ Al   6.47000000000000000000000000000000      
+ Element Al
+ EPS    6.47000000000000000000000000000000      
+ Si   7.51000000000000000000000000000000      
+ Element Si
+ EPS    7.51000000000000000000000000000000      
+ P    5.36000000000000000000000000000000      
+ Element P 
+ EPS    5.36000000000000000000000000000000      
+ S    7.14000000000000000000000000000000      
+ Element S 
+ EPS    7.14000000000000000000000000000000      
+ Cl   5.50000000000000000000000000000000      
+ Element Cl
+ EPS    5.50000000000000000000000000000000      
+ Ar   6.18000000000000000000000000000000      
+ Element Ar
+ EPS    6.18000000000000000000000000000000      
+ K    5.12000000000000000000000000000000      
+ Element K 
+ EPS    5.12000000000000000000000000000000      
+ Ca   6.38000000000000000000000000000000      
+ Element Ca
+ EPS    6.38000000000000000000000000000000      
+ Ti   4.99000000000000000000000000000000      
+ Element Ti
+ EPS    4.99000000000000000000000000000000      
+ V    4.00000000000000000000000000000000      
+ Element V 
+ EPS    4.00000000000000000000000000000000      
+ Cr   5.64000000000000000000000000000000      
+ Element Cr
+ EPS    5.64000000000000000000000000000000      
+ Mn   5.39000000000000000000000000000000      
+ Element Mn
+ EPS    5.39000000000000000000000000000000      
+ Fe   7.42000000000000000000000000000000      
+ Element Fe
+ EPS    7.42000000000000000000000000000000      
+ Co   4.92000000000000000000000000000000      
+ Element Co
+ EPS    4.92000000000000000000000000000000      
+ Ni   6.23000000000000000000000000000000      
+ Element Ni
+ EPS    6.23000000000000000000000000000000      
+ Cu   4.21000000000000000000000000000000      
+ Element Cu
+ EPS    4.21000000000000000000000000000000      
+ Zn   4.60000000000000000000000000000000      
+ Element Zn
+ EPS    4.60000000000000000000000000000000      
+ Ga   2.88000000000000000000000000000000      
+ Element Ga
+ EPS    2.88000000000000000000000000000000      
+ Br   2.56000000000000000000000000000000      
+ Element Br
+ EPS    2.56000000000000000000000000000000      
+ Kr   3.25000000000000000000000000000000      
+ Element Kr
+ EPS    3.25000000000000000000000000000000      
+ Rb   2.60000000000000000000000000000000      
+ Element Rb
+ EPS    2.60000000000000000000000000000000      
+ Sr   2.92000000000000000000000000000000      
+ Element Sr
+ EPS    2.92000000000000000000000000000000      
+ Zr   2.58000000000000000000000000000000      
+ Element Zr
+ EPS    2.58000000000000000000000000000000      
+ W    1.11000000000000000000000000000000      
+ Element W 
+ EPS    1.11000000000000000000000000000000      
+H :  1.000E+00 -> 1.000E+00
+He:  8.511E-02 -> 8.511E-02
+Li:  1.122E-11 -> 1.122E-11
+Be:  2.399E-11 -> 2.399E-11
+B :  5.012E-10 -> 5.012E-10
+C :  2.692E-04 -> 3.090E-04
+N :  6.761E-05 -> 6.026E-05
+O :  4.898E-04 -> 5.495E-04
+F :  3.631E-08 -> 3.631E-08
+Ne:  8.511E-05 -> 6.918E-05
+Na:  1.738E-06 -> 1.738E-06
+Mg:  3.981E-05 -> 3.715E-05
+Al:  2.818E-06 -> 2.951E-06
+Si:  3.236E-05 -> 3.236E-05
+P :  2.570E-07 -> 2.291E-07
+S :  1.318E-05 -> 1.380E-05
+Cl:  3.162E-07 -> 3.162E-07
+Ar:  2.512E-06 -> 1.514E-06
+K :  1.072E-07 -> 1.318E-07
+Ca:  2.188E-06 -> 2.399E-06
+Sc:  1.413E-09 -> 1.000E-52
+Ti:  8.913E-08 -> 9.772E-08
+V :  8.511E-09 -> 1.000E-08
+Cr:  4.365E-07 -> 4.365E-07
+Mn:  2.692E-07 -> 2.455E-07
+Fe:  3.162E-05 -> 2.630E-05
+Co:  9.772E-08 -> 8.318E-08
+Ni:  1.660E-06 -> 1.698E-06
+Cu:  1.549E-08 -> 1.622E-08
+Zn:  3.631E-08 -> 3.981E-08
+Ga:  1.096E-09 -> 7.586E-10
+Ge:  4.467E-09 -> 1.000E-52
+As:  1.000E-52 -> 1.000E-52
+Se:  1.000E-52 -> 1.000E-52
+Br:  1.000E-52 -> 3.631E-10
+Kr:  1.778E-09 -> 1.778E-09
+Rb:  3.311E-10 -> 3.981E-10
+Sr:  7.413E-10 -> 8.318E-10
+Y :  1.622E-10 -> 1.000E-52
+Zr:  3.802E-10 -> 3.802E-10
+W :  7.079E-12 -> 1.288E-11
+           mass     eps        n/nH log10(n/nSi)       mfrac
+  1 H     1.008  12.000   1.000E+00        4.490   7.379E-01
+  2 He    4.003  10.930   8.511E-02        3.420   2.494E-01
+  3 Li    6.940   1.050   1.122E-11       -6.460   5.700E-11
+  4 Be    9.012   1.380   2.399E-11       -6.130   1.583E-10
+  6 C    12.011   8.490   3.090E-04        0.980   2.717E-03
+  7 N    14.007   7.780   6.026E-05        0.270   6.179E-04
+  8 O    15.999   8.740   5.495E-04        1.230   6.436E-03
+  9 F    18.998   4.560   3.631E-08       -2.950   5.050E-07
+ 11 Na   22.990   6.240   1.738E-06       -1.270   2.925E-05
+ 12 Mg   24.305   7.570   3.715E-05        0.060   6.611E-04
+ 13 Al   26.982   6.470   2.951E-06       -1.040   5.829E-05
+ 14 Si   28.085   7.510   3.236E-05        0.000   6.653E-04
+ 15 P    30.974   5.360   2.291E-07       -2.150   5.194E-06
+ 16 S    32.060   7.140   1.380E-05       -0.370   3.240E-04
+ 17 Cl   35.450   5.500   3.162E-07       -2.010   8.207E-06
+ 19 K    39.098   5.120   1.318E-07       -2.390   3.773E-06
+ 20 Ca   40.078   6.380   2.399E-06       -1.130   7.038E-05
+ 22 Ti   47.867   4.990   9.772E-08       -2.520   3.424E-06
+ 23 V    50.942   4.000   1.000E-08       -3.510   3.729E-07
+ 24 Cr   51.996   5.640   4.365E-07       -1.870   1.662E-05
+ 26 Fe   55.845   7.420   2.630E-05       -0.090   1.075E-03
+ 40 Zr   91.224   2.580   3.802E-10       -4.930   2.539E-08
+rho = n<H> *  1.3660E+00 amu
+C/O = 0.562
+ element H            1
+ element He           2
+ element C            6
+ element N            7
+ element O            8
+ element Na          11
+ element Mg          12
+ element Si          14
+ element F            9
+ element Fe          26
+ element Al          13
+ element Ca          20
+ element Cr          24
+ element Ti          22
+ element S           16
+ element Cl          17
+ element K           19
+ element Li           3
+ element V           23
+ element Zr          40
+ element Be           4
+ element P           15
+ element el           0
+ 
+ reading kp-data from data/dispol_BarklemCollet.dat ...
+    1                  H2   2 H
+    2                 LI2   2 Li
+    3                  C2   2 C
+    4                  N2   2 N
+    5                  O2   2 O
+    6                  F2   2 F
+    7                 NA2   2 Na
+    8                 MG2   2 Mg
+    9                 AL2   2 Al
+   10                 SI2   2 Si
+   11                  P2   2 P
+   12                  S2   2 S
+   13                 CL2   2 Cl
+   14                  K2   2 K
+   15                 H2+   2 H   -1 el
+   16                HE2+   2 He  -1 el
+   17                 C2+   2 C   -1 el
+   18                 N2+   2 N   -1 el
+   19                 O2+   2 O   -1 el
+   20                 P2+   2 P   -1 el
+   21                 S2+   2 S   -1 el
+   22                 H2-   2 H    1 el
+   23                 C2-   2 C    1 el
+   24                 LIH   1 Li   1 H
+   25                 BEH   1 Be   1 H
+   26                  CH   1 C    1 H
+   27                  NH   1 N    1 H
+   28                  OH   1 O    1 H
+   29                  HF   1 F    1 H
+   30                 NAH   1 Na   1 H
+   31                 MGH   1 Mg   1 H
+   32                 ALH   1 Al   1 H
+   33                 SIH   1 Si   1 H
+   34                  PH   1 P    1 H
+   35                  HS   1 S    1 H
+   36                 HCL   1 Cl   1 H
+   37                  KH   1 K    1 H
+   38                 CAH   1 Ca   1 H
+   39                 TIH   1 Ti   1 H
+   40                 CRH   1 Cr   1 H
+   41                 FEH   1 Fe   1 H
+   42                HEH+   1 He   1 H   -1 el
+   43                BEH+   1 H    1 Be  -1 el
+   44                 CH+   1 H    1 C   -1 el
+   45                 NH+   1 H    1 N   -1 el
+   46                 OH+   1 H    1 O   -1 el
+   47                 HF+   1 F    1 H   -1 el
+   48                MGH+   1 H    1 Mg  -1 el
+   49                ALH+   1 H    1 Al  -1 el
+   50                SIH+   1 H    1 Si  -1 el
+   51                 PH+   1 H    1 P   -1 el
+   52                 SH+   1 H    1 S   -1 el
+   53                HCL+   1 H    1 Cl  -1 el
+   54                 CH-   1 H    1 C    1 el
+   55                 OH-   1 H    1 O    1 el
+   56                SIH-   1 H    1 Si   1 el
+   57                 HS-   1 H    1 S    1 el
+   58                  CN   1 N    1 C
+   59                  CO   1 O    1 C
+   60                  CF   1 F    1 C
+   61                 SIC   1 Si   1 C
+   62                  CP   1 P    1 C
+   63                  CS   1 S    1 C
+   64                 CCL   1 Cl   1 C
+   65                 CN+   1 N    1 C   -1 el
+   66                 CO+   1 O    1 C   -1 el
+   67                 CN-   1 N    1 C    1 el
+   68                 CS-   1 C    1 S    1 el
+   69                  NO   1 O    1 N
+   70                  FN   1 F    1 N
+   71                 ALN   1 Al   1 N
+   72                 SIN   1 Si   1 N
+   73                  PN   1 P    1 N
+   74                  SN   1 S    1 N
+   75                 NCL   1 Cl   1 N
+   76                 TIN   1 Ti   1 N
+   77                 ZRN   1 Zr   1 N
+   78                 NO+   1 N    1 O   -1 el
+   79                 NS+   1 N    1 S   -1 el
+   80                 LIO   1 O    1 Li
+   81                 BEO   1 O    1 Be
+   82                  FO   1 F    1 O
+   83                 NAO   1 Na   1 O
+   84                 MGO   1 Mg   1 O
+   85                 ALO   1 Al   1 O
+   86                 SIO   1 Si   1 O
+   87                  PO   1 P    1 O
+   88                  SO   1 S    1 O
+   89                 CLO   1 Cl   1 O
+   90                  KO   1 K    1 O
+   91                 CAO   1 Ca   1 O
+   92                 TIO   1 Ti   1 O
+   93                  VO   1 V    1 O
+   94                 CRO   1 Cr   1 O
+   95                 FEO   1 Fe   1 O
+   96                 ZRO   1 Zr   1 O
+   97                SIO+   1 O    1 Si  -1 el
+   98                 PO+   1 O    1 P   -1 el
+   99                 SO+   1 O    1 S   -1 el
+  100                FEO-   1 Fe   1 O    1 el
+  101                 LIF   1 Li   1 F
+  102                 BEF   1 Be   1 F
+  103                 NAF   1 Na   1 F
+  104                 MGF   1 Mg   1 F
+  105                 ALF   1 Al   1 F
+  106                 SIF   1 Si   1 F
+  107                  PF   1 P    1 F
+  108                  SF   1 S    1 F
+  109                  KF   1 K    1 F
+  110                 CAF   1 Ca   1 F
+  111                LINA   1 Li   1 Na
+  112                 BES   1 S    1 Be
+  113                 MGS   1 S    1 Mg
+  114                 ALS   1 S    1 Al
+  115                 SIS   1 S    1 Si
+  116                  PS   1 P    1 S
+  117                 CAS   1 Ca   1 S
+  118                 TIS   1 Ti   1 S
+  119                 CRS   1 Cr   1 S
+  120                LICL   1 Cl   1 Li
+  121                BECL   1 Cl   1 Be
+  122                NACL   1 Cl   1 Na
+  123                MGCL   1 Cl   1 Mg
+  124                ALCL   1 Cl   1 Al
+  125                SICL   1 Cl   1 Si
+  126                 PCL   1 Cl   1 P
+  127                 KCL   1 K    1 Cl
+  128                CACL   1 Ca   1 Cl
+  129                FECL   1 Fe   1 Cl
+ 
+ reading kp-data from data/dispol_StockKitzmann_withoutTsuji.dat ...
+  124                ALCL   1 Al   1 Cl    OVERWRITE
+  130               ALCLF   1 Al   1 Cl   1 F    --> NEW
+  131              ALCLF2   1 Al   1 Cl   2 F    --> NEW
+  132               ALOCL   1 Al   1 Cl   1 O    --> NEW
+  133               ALCL2   1 Al   2 Cl    --> NEW
+  134              ALCL2F   1 Al   2 Cl   1 F    --> NEW
+  135               ALCL3   1 Al   3 Cl    --> NEW
+  105                 ALF   1 Al   1 F    OVERWRITE
+  136                ALOF   1 Al   1 F    1 O    --> NEW
+  137                ALF2   1 Al   2 F    --> NEW
+  138               ALF2O   1 Al   2 F    1 O    --> NEW
+  139                ALF3   1 Al   3 F    --> NEW
+  140              NAALF4   1 Al   4 F    1 Na    --> NEW
+   32                 ALH   1 Al   1 H    OVERWRITE
+  141                ALOH   1 Al   1 H    1 O    --> NEW
+ HALO, ALOH different isomere in subsequent source is OK
+  142                HALO   1 Al   1 H    1 O    --> NEW
+  143               ALO2H   1 Al   1 H    2 O    --> NEW
+   71                 ALN   1 Al   1 N    OVERWRITE
+   85                 ALO   1 Al   1 O    OVERWRITE
+  144                ALO2   1 Al   2 O    --> NEW
+  114                 ALS   1 Al   1 S    OVERWRITE
+    9                 AL2   2 Al    OVERWRITE
+  145              AL2CL6   2 Al   6 Cl    --> NEW
+  146             (ALF3)2   2 Al   6 F    --> NEW
+  147                AL2O   2 Al   1 O    --> NEW
+  148               AL2O2   2 Al   2 O    --> NEW
+  149                 ALC   1 C    1 Al    --> NEW
+   64                 CCL   1 C    1 Cl    OVERWRITE
+  150               CFCLO   1 C    1 Cl   1 F    1 O    --> NEW
+  151               CCLF3   1 C    1 Cl   3 F    --> NEW
+  152                CCLN   1 C    1 Cl   1 N    --> NEW
+  153                CCLO   1 C    1 Cl   1 O    --> NEW
+  154                CCL2   1 C    2 Cl    --> NEW
+  155              CCL2F2   1 C    2 Cl   2 F    --> NEW
+  156               COCL2   1 C    2 Cl   1 O    --> NEW
+  157                CCL3   1 C    3 Cl    --> NEW
+  158               CCL3F   1 C    3 Cl   1 F    --> NEW
+  159                CCL4   1 C    4 Cl    --> NEW
+   60                  CF   1 C    1 F    OVERWRITE
+  160                 CFN   1 C    1 F    1 N    --> NEW
+  161                 CFO   1 C    1 F    1 O    --> NEW
+  162                 CF2   1 C    2 F    --> NEW
+  163                CF2O   1 C    2 F    1 O    --> NEW
+  164                 CF3   1 C    3 F    --> NEW
+  165                 CF4   1 C    4 F    --> NEW
+  166                CF4O   1 C    4 F    1 O    --> NEW
+  167                CF8S   1 C    8 F    1 S    --> NEW
+   26                  CH   1 C    1 H    OVERWRITE
+  168                CHCL   1 C    1 H    1 Cl    --> NEW
+  169               CHCL3   1 C    1 H    3 Cl    --> NEW
+  170                 CHF   1 C    1 H    1 F    --> NEW
+  171                CHFO   1 C    1 H    1 F    1 O    --> NEW
+  172                CHF3   1 C    1 H    3 F    --> NEW
+  173                 HCN   1 C    1 H    1 N    --> NEW
+  174                CHNO   1 C    1 H    1 N    1 O    --> NEW
+  175                 HCO   1 C    1 H    1 O    --> NEW
+  176                 PCH   1 C    1 H    1 P    --> NEW
+  177                 CH2   1 C    2 H    --> NEW
+  178              CH2CL2   1 C    2 H    2 Cl    --> NEW
+  179              CH2CLF   1 C    2 H    1 Cl   1 F    --> NEW
+  180               CH2F2   1 C    2 H    2 F    --> NEW
+  181                H2CO   1 C    2 H    1 O    --> NEW
+  182                 CH3   1 C    3 H    --> NEW
+  183               CH3CL   1 C    3 H    1 Cl    --> NEW
+  184                CH3F   1 C    3 H    1 F    --> NEW
+  185                 CH4   1 C    4 H    --> NEW
+  186                 KCN   1 C    1 K    1 N    --> NEW
+   58                  CN   1 C    1 N    OVERWRITE
+  187                NACN   1 C    1 N    1 Na    --> NEW
+  188                 CNO   1 C    1 N    1 O    --> NEW
+  189                 CNN   1 C    2 N    --> NEW
+ NCN, CNN different isomere in subsequent source is OK
+  190                 NCN   1 C    2 N    --> NEW
+   59                  CO   1 C    1 O    OVERWRITE
+  191                 COS   1 C    1 O    1 S    --> NEW
+  192                 CO2   1 C    2 O    --> NEW
+   62                  CP   1 C    1 P    OVERWRITE
+   63                  CS   1 C    1 S    OVERWRITE
+  193                 CS2   1 C    2 S    --> NEW
+   61                 SIC   1 C    1 Si    OVERWRITE
+  194                SI2C   1 C    2 Si    --> NEW
+    3                  C2   2 C    OVERWRITE
+  195               C2CL2   2 C    2 Cl    --> NEW
+  196               C2CL4   2 C    4 Cl    --> NEW
+  197               C2CL6   2 C    6 Cl    --> NEW
+  198                C2F2   2 C    2 F    --> NEW
+  199               C2F3N   2 C    3 F    1 N    --> NEW
+  200                C2F4   2 C    4 F    --> NEW
+  201                C2F6   2 C    6 F    --> NEW
+  202                 C2H   2 C    1 H    --> NEW
+  203               C2HCL   2 C    1 H    1 Cl    --> NEW
+  204                C2HF   2 C    1 H    1 F    --> NEW
+  205                C2H2   2 C    2 H    --> NEW
+  206                C2H4   2 C    4 H    --> NEW
+  207               C2H4O   2 C    4 H    1 O    --> NEW
+  208              (KCN)2   2 C    2 K    2 N    --> NEW
+  209                 C2N   2 C    1 N    --> NEW
+  210                C2N2   2 C    2 N    --> NEW
+  211             (NACN)2   2 C    2 N    2 Na    --> NEW
+  212                SIC2   2 C    1 Si    --> NEW
+  213                 C2O   2 C    1 O    --> NEW
+  214                  C3   3 C    --> NEW
+  215                C3O2   3 C    2 O    --> NEW
+  216                  C4   4 C    --> NEW
+  217                C4N2   4 C    2 N    --> NEW
+  218                  C5   5 C    --> NEW
+  219             FE(CO)5   5 C    1 Fe   5 O    --> NEW
+  128                CACL   1 Ca   1 Cl    OVERWRITE
+  220               CACL2   1 Ca   2 Cl    --> NEW
+  110                 CAF   1 Ca   1 F    OVERWRITE
+  221                CAF2   1 Ca   2 F    --> NEW
+  222                CAOH   1 Ca   1 H    1 O    --> NEW
+  223             CA(OH)2   1 Ca   2 H    2 O    --> NEW
+   91                 CAO   1 Ca   1 O    OVERWRITE
+  117                 CAS   1 Ca   1 S    OVERWRITE
+  224                 CA2   2 Ca    --> NEW
+  225                 CLF   1 Cl   1 F    --> NEW
+  226               MGCLF   1 Cl   1 F    1 Mg    --> NEW
+  227              CLFO2S   1 Cl   1 F    2 O    1 S    --> NEW
+  228               CLFO3   1 Cl   1 F    3 O    --> NEW
+  229              PCLF2O   1 Cl   2 F    1 O    1 P    --> NEW
+  230                CLF3   1 Cl   3 F    --> NEW
+  231              CLF3SI   1 Cl   3 F    1 Si    --> NEW
+  232                CLF5   1 Cl   5 F    --> NEW
+  233               CLF5S   1 Cl   5 F    1 S    --> NEW
+  129                FECL   1 Cl   1 Fe    OVERWRITE
+   36                 HCL   1 Cl   1 H    OVERWRITE
+  234              CHCLF2   1 C    1 H    1 Cl   2 F    --> NEW
+  235              CHCL2F   1 C    1 H    2 Cl   1 F    --> NEW
+  236                OHCL   1 Cl   1 H    1 O    --> NEW
+  237              SIH3CL   1 Cl   3 H    1 Si    --> NEW
+  127                 KCL   1 Cl   1 K    OVERWRITE
+  123                MGCL   1 Cl   1 Mg    OVERWRITE
+  238                NOCL   1 Cl   1 N    1 O    --> NEW
+  239               NO2CL   1 Cl   1 N    2 O    --> NEW
+  122                NACL   1 Cl   1 Na    OVERWRITE
+   89                 CLO   1 Cl   1 O    OVERWRITE
+  240               TIOCL   1 Cl   1 O    1 Ti    --> NEW
+  241                CLO2   1 Cl   2 O    --> NEW
+  242                CLO3   1 Cl   3 O    --> NEW
+  126                 PCL   1 Cl   1 P    OVERWRITE
+  243                 SCL   1 Cl   1 S    --> NEW
+  244                CLS2   1 Cl   2 S    --> NEW
+  125                SICL   1 Cl   1 Si    OVERWRITE
+  245                TICL   1 Cl   1 Ti    --> NEW
+   13                 CL2   2 Cl    OVERWRITE
+  246              CL2FOP   2 Cl   1 F    1 O    1 P    --> NEW
+  247               FECL2   2 Cl   1 Fe    --> NEW
+  248             SIH2CL2   2 Cl   2 H    1 Si    --> NEW
+  249              (KCL)2   2 Cl   2 K    --> NEW
+  250               MGCL2   2 Cl   1 Mg    --> NEW
+  251             (NACL)2   2 Cl   2 Na    --> NEW
+  252               CLOCL   2 Cl   1 O    --> NEW
+ CLCLO, CLOCL different isomere in subsequent source is OK
+  253               CLCLO   2 Cl   1 O    --> NEW
+  254              TIOCL2   2 Cl   1 O    1 Ti    --> NEW
+  255              CLO2CL   2 Cl   2 O    --> NEW
+ CLOCLO, CLO2CL different isomere in subsequent source is OK
+  256              CLOCLO   2 Cl   2 O    --> NEW
+  257              SO2CL2   2 Cl   2 O    1 S    --> NEW
+  258                SCL2   2 Cl   1 S    --> NEW
+  259               SICL2   2 Cl   1 Si    --> NEW
+  260               TICL2   2 Cl   1 Ti    --> NEW
+  261              SIFCL3   3 Cl   1 F    1 Si    --> NEW
+  262               FECL3   3 Cl   1 Fe    --> NEW
+  263              SIHCL3   3 Cl   1 H    1 Si    --> NEW
+  264               PCL3O   3 Cl   1 O    1 P    --> NEW
+  265                PCL3   3 Cl   1 P    --> NEW
+  266               PCL3S   3 Cl   1 P    1 S    --> NEW
+  267               SICL3   3 Cl   1 Si    --> NEW
+  268               TICL3   3 Cl   1 Ti    --> NEW
+  269              FE2CL4   4 Cl   2 Fe    --> NEW
+  270              MG2CL4   4 Cl   2 Mg    --> NEW
+  271               SICL4   4 Cl   1 Si    --> NEW
+  272               TICL4   4 Cl   1 Ti    --> NEW
+  273                PCL5   5 Cl   1 P    --> NEW
+  274            (FECL3)2   6 Cl   2 Fe    --> NEW
+  275                 CRN   1 Cr   1 N    --> NEW
+   94                 CRO   1 Cr   1 O    OVERWRITE
+  276                CRO2   1 Cr   2 O    --> NEW
+  277                CRO3   1 Cr   3 O    --> NEW
+  278                 FEF   1 F    1 Fe    --> NEW
+   29                  HF   1 F    1 H    OVERWRITE
+  279                 FHO   1 F    1 H    1 O    --> NEW
+  280               FHO3S   1 F    1 H    3 O    1 S    --> NEW
+  281               SIH3F   1 F    3 H    1 Si    --> NEW
+  109                  KF   1 F    1 K    OVERWRITE
+  104                 MGF   1 F    1 Mg    OVERWRITE
+   70                  FN   1 F    1 N    OVERWRITE
+  282                 FNO   1 F    1 N    1 O    --> NEW
+  283                FNO2   1 F    1 N    2 O    --> NEW
+  284                FNO3   1 F    1 N    3 O    --> NEW
+  103                 NAF   1 F    1 Na    OVERWRITE
+   82                  FO   1 F    1 O    OVERWRITE
+  285                TIOF   1 F    1 O    1 Ti    --> NEW
+  286                 OFO   1 F    2 O    --> NEW
+ FOO, OFO different isomere in subsequent source is OK
+  287                 FOO   1 F    2 O    --> NEW
+  107                  PF   1 F    1 P    OVERWRITE
+  288                 PSF   1 F    1 P    1 S    --> NEW
+  108                  SF   1 F    1 S    OVERWRITE
+  106                 SIF   1 F    1 Si    OVERWRITE
+  289                 TIF   1 F    1 Ti    --> NEW
+    6                  F2   2 F    OVERWRITE
+  290                FEF2   2 F    1 Fe    --> NEW
+  291                H2F2   2 F    2 H    --> NEW
+  292              SIH2F2   2 F    2 H    1 Si    --> NEW
+  293                K2F2   2 F    2 K    --> NEW
+  294                MGF2   2 F    1 Mg    --> NEW
+  295                 F2N   2 F    1 N    --> NEW
+  296           F2N2(cis)   2 F    2 N    --> NEW
+ F2N2(trans), F2N2(cis) different isomere in subsequent source is OK
+  297         F2N2(trans)   2 F    2 N    --> NEW
+  298               NA2F2   2 F    2 Na    --> NEW
+  299                 F2O   2 F    1 O    --> NEW
+  300                F2OS   2 F    1 O    1 S    --> NEW
+  301               SIOF2   2 F    1 O    1 Si    --> NEW
+  302               TIOF2   2 F    1 O    1 Ti    --> NEW
+  303                F2O2   2 F    2 O    --> NEW
+  304               F2O2S   2 F    2 O    1 S    --> NEW
+  305                 PF2   2 F    1 P    --> NEW
+  306                 SF2   2 F    1 S    --> NEW
+  307                FSSF   2 F    2 S    --> NEW
+ F2S2, FSSF different isomere in subsequent source is OK
+  308                F2S2   2 F    2 S    --> NEW
+  309                SIF2   2 F    1 Si    --> NEW
+  310                TIF2   2 F    1 Ti    --> NEW
+  311                FEF3   3 F    1 Fe    --> NEW
+  312               SIHF3   3 F    1 H    1 Si    --> NEW
+  313                F3H3   3 F    3 H    --> NEW
+  314                 NF3   3 F    1 N    --> NEW
+  315                NOF3   3 F    1 N    1 O    --> NEW
+  316                POF3   3 F    1 O    1 P    --> NEW
+  317                 PF3   3 F    1 P    --> NEW
+  318                PSF3   3 F    1 P    1 S    --> NEW
+  319                 SF3   3 F    1 S    --> NEW
+  320                SIF3   3 F    1 Si    --> NEW
+  321                TIF3   3 F    1 Ti    --> NEW
+  322                F4H4   4 F    4 H    --> NEW
+  323               MG2F4   4 F    2 Mg    --> NEW
+  324                N2F4   4 F    2 N    --> NEW
+  325                 SF4   4 F    1 S    --> NEW
+  326                SIF4   4 F    1 Si    --> NEW
+  327                TIF4   4 F    1 Ti    --> NEW
+  328                F5H5   5 F    5 H    --> NEW
+  329                 PF5   5 F    1 P    --> NEW
+  330                 SF5   5 F    1 S    --> NEW
+  331                F6H6   6 F    6 H    --> NEW
+  332                 SF6   6 F    1 S    --> NEW
+  333                F7H7   7 F    7 H    --> NEW
+  334               F10S2  10 F    2 S    --> NEW
+  335             FE(OH)2   1 Fe   2 H    2 O    --> NEW
+   95                 FEO   1 Fe   1 O    OVERWRITE
+  336                 FES   1 Fe   1 S    --> NEW
+   37                  KH   1 H    1 K    OVERWRITE
+  337                 KOH   1 H    1 K    1 O    --> NEW
+   31                 MGH   1 H    1 Mg    OVERWRITE
+  338                MGOH   1 H    1 Mg   1 O    --> NEW
+   27                  NH   1 H    1 N    OVERWRITE
+  339                 HNO   1 H    1 N    1 O    --> NEW
+  340                HONO   1 H    1 N    2 O    --> NEW
+ HNO2, HONO different isomere in subsequent source is OK
+  341                HNO2   1 H    1 N    2 O    --> NEW
+  342                HNO3   1 H    1 N    3 O    --> NEW
+   30                 NAH   1 H    1 Na    OVERWRITE
+  343                NAOH   1 H    1 Na   1 O    --> NEW
+   28                  OH   1 H    1 O    OVERWRITE
+  344                 HO2   1 H    2 O    --> NEW
+   34                  PH   1 H    1 P    OVERWRITE
+   33                 SIH   1 H    1 Si    OVERWRITE
+    1                  H2   2 H    OVERWRITE
+  345              (KOH)2   2 H    2 K    2 O    --> NEW
+  346             MG(OH)2   2 H    1 Mg   2 O    --> NEW
+  347                 NH2   2 H    1 N    --> NEW
+  348                N2H2   2 H    2 N    --> NEW
+  349             (NAOH)2   2 H    2 Na   2 O    --> NEW
+  350                 H2O   2 H    1 O    --> NEW
+  351               H2SO4   2 H    4 O    1 S    --> NEW
+  352                 PH2   2 H    1 P    --> NEW
+  353                 H2S   2 H    1 S    --> NEW
+  354                 NH3   3 H    1 N    --> NEW
+  355                 PH3   3 H    1 P    --> NEW
+  356                N2H4   4 H    2 N    --> NEW
+  357                SIH4   4 H    1 Si    --> NEW
+   90                  KO   1 K    1 O    OVERWRITE
+   14                  K2   2 K    OVERWRITE
+  358               K2SO4   2 K    4 O    1 S    --> NEW
+  359                 MGN   1 Mg   1 N    --> NEW
+   84                 MGO   1 Mg   1 O    OVERWRITE
+  113                 MGS   1 Mg   1 S    OVERWRITE
+    8                 MG2   2 Mg    OVERWRITE
+   69                  NO   1 N    1 O    OVERWRITE
+  360                 NO2   1 N    2 O    --> NEW
+  361                 NO3   1 N    3 O    --> NEW
+   73                  PN   1 N    1 P    OVERWRITE
+   74                  SN   1 N    1 S    OVERWRITE
+   72                 SIN   1 N    1 Si    OVERWRITE
+  362                SI2N   1 N    2 Si    --> NEW
+  363                  VN   1 N    1 V    --> NEW
+    4                  N2   2 N    OVERWRITE
+  364                 N2O   2 N    1 O    --> NEW
+  365                N2O3   2 N    3 O    --> NEW
+  366                N2O4   2 N    4 O    --> NEW
+  367                N2O5   2 N    5 O    --> NEW
+  368                  N3   3 N    --> NEW
+   83                 NAO   1 Na   1 O    OVERWRITE
+    7                 NA2   2 Na    OVERWRITE
+  369              NA2SO4   2 Na   4 O    1 S    --> NEW
+   87                  PO   1 O    1 P    OVERWRITE
+   88                  SO   1 O    1 S    OVERWRITE
+  370                 S2O   1 O    2 S    --> NEW
+   86                 SIO   1 O    1 Si    OVERWRITE
+   92                 TIO   1 O    1 Ti    OVERWRITE
+   93                  VO   1 O    1 V    OVERWRITE
+    5                  O2   2 O    OVERWRITE
+  371                 PO2   2 O    1 P    --> NEW
+  372                 SO2   2 O    1 S    --> NEW
+  373                SIO2   2 O    1 Si    --> NEW
+  374                TIO2   2 O    1 Ti    --> NEW
+  375                 VO2   2 O    1 V    --> NEW
+  376                  O3   3 O    --> NEW
+  377                 SO3   3 O    1 S    --> NEW
+  378                P4O6   6 O    4 P    --> NEW
+  379               P4O10  10 O    4 P    --> NEW
+  116                  PS   1 P    1 S    OVERWRITE
+   11                  P2   2 P    OVERWRITE
+  380                  P4   4 P    --> NEW
+  381                P4S3   4 P    3 S    --> NEW
+  115                 SIS   1 S    1 Si    OVERWRITE
+   12                  S2   2 S    OVERWRITE
+  382                  S3   3 S    --> NEW
+  383                  S4   4 S    --> NEW
+  384                  S5   5 S    --> NEW
+  385                  S6   6 S    --> NEW
+  386                  S7   7 S    --> NEW
+  387                  S8   8 S    --> NEW
+   10                 SI2   2 Si    OVERWRITE
+  388                 SI3   3 Si    --> NEW
+  389                 AL+   1 Al  -1 el    --> NEW
+  390                 AL-   1 Al   1 el    --> NEW
+  391               ALCL+   1 Al   1 Cl  -1 el    --> NEW
+  392              ALCLF+   1 Al   1 Cl   1 F   -1 el    --> NEW
+  393              ALCL2+   1 Al   2 Cl  -1 el    --> NEW
+  394              ALCL2-   1 Al   2 Cl   1 el    --> NEW
+  395                ALF+   1 Al   1 F   -1 el    --> NEW
+  396               ALF2+   1 Al   2 F   -1 el    --> NEW
+  397               ALF2-   1 Al   2 F    1 el    --> NEW
+  398              ALF2O-   1 Al   2 F    1 O    1 el    --> NEW
+  399               ALF4-   1 Al   4 F    1 el    --> NEW
+  400               ALOH+   1 Al   1 H    1 O   -1 el    --> NEW
+  401               ALOH-   1 Al   1 H    1 O    1 el    --> NEW
+  402                ALO+   1 Al   1 O   -1 el    --> NEW
+  403                ALO-   1 Al   1 O    1 el    --> NEW
+  404               ALO2-   1 Al   2 O    1 el    --> NEW
+  405               AL2O+   2 Al   1 O   -1 el    --> NEW
+  406              AL2O2+   2 Al   2 O   -1 el    --> NEW
+  407                  C+   1 C   -1 el    --> NEW
+  408                  C-   1 C    1 el    --> NEW
+  409                 CF+   1 C    1 F   -1 el    --> NEW
+  410                CF2+   1 C    2 F   -1 el    --> NEW
+  411                CF3+   1 C    3 F   -1 el    --> NEW
+   44                 CH+   1 C    1 H   -1 el    OVERWRITE
+  412                HCO+   1 C    1 H    1 O   -1 el    --> NEW
+   65                 CN+   1 C    1 N   -1 el    OVERWRITE
+   67                 CN-   1 C    1 N    1 el    OVERWRITE
+  413                CO2-   1 C    2 O    1 el    --> NEW
+   23                 C2-   2 C    1 el    OVERWRITE
+  414                 CA+   1 Ca  -1 el    --> NEW
+  415               CAOH+   1 Ca   1 H    1 O   -1 el    --> NEW
+  416                 CL+   1 Cl  -1 el    --> NEW
+  417               MGCL+   1 Cl   1 Mg  -1 el    --> NEW
+  418                SCL+   1 Cl   1 S   -1 el    --> NEW
+  419                 CL-   1 Cl   1 el    --> NEW
+  420               SCL2+   2 Cl   1 S   -1 el    --> NEW
+  421                 CR+   1 Cr  -1 el    --> NEW
+  422                 CR-   1 Cr   1 el    --> NEW
+  423                  F+   1 F   -1 el    --> NEW
+  424                  F-   1 F    1 el    --> NEW
+  425                MGF+   1 F    1 Mg  -1 el    --> NEW
+  426                 PF+   1 F    1 P   -1 el    --> NEW
+  427                 PF-   1 F    1 P    1 el    --> NEW
+  428                 SF+   1 F    1 S   -1 el    --> NEW
+  429                 SF-   1 F    1 S    1 el    --> NEW
+  430                F2K-   2 F    1 K    1 el    --> NEW
+  431               MGF2+   2 F    1 Mg  -1 el    --> NEW
+  432               NAF2-   2 F    1 Na   1 el    --> NEW
+  433                PF2+   2 F    1 P   -1 el    --> NEW
+  434                PF2-   2 F    1 P    1 el    --> NEW
+  435                SF2+   2 F    1 S   -1 el    --> NEW
+  436                SF2-   2 F    1 S    1 el    --> NEW
+  437                SF3+   3 F    1 S   -1 el    --> NEW
+  438                SF3-   3 F    1 S    1 el    --> NEW
+  439                SF4+   4 F    1 S   -1 el    --> NEW
+  440                SF4-   4 F    1 S    1 el    --> NEW
+  441                SF5+   5 F    1 S   -1 el    --> NEW
+  442                SF5-   5 F    1 S    1 el    --> NEW
+  443                SF6-   6 F    1 S    1 el    --> NEW
+  444                 FE+   1 Fe  -1 el    --> NEW
+  445                 FE-   1 Fe   1 el    --> NEW
+  446                  H+   1 H   -1 el    --> NEW
+  447                  H-   1 H    1 el    --> NEW
+  448                KOH+   1 H    1 K    1 O   -1 el    --> NEW
+  449               MGOH+   1 H    1 Mg   1 O   -1 el    --> NEW
+  450               NAOH+   1 H    1 Na   1 O   -1 el    --> NEW
+   46                 OH+   1 H    1 O   -1 el    OVERWRITE
+   55                 OH-   1 H    1 O    1 el    OVERWRITE
+   50                SIH+   1 H    1 Si  -1 el    OVERWRITE
+   15                 H2+   2 H   -1 el    OVERWRITE
+   22                 H2-   2 H    1 el    OVERWRITE
+  451                H3O+   3 H    1 O   -1 el    --> NEW
+  452                 HE+   1 He  -1 el    --> NEW
+  453                  K+   1 K   -1 el    --> NEW
+  454                  K-   1 K    1 el    --> NEW
+  455                 KO-   1 K    1 O    1 el    --> NEW
+  456                 MG+   1 Mg  -1 el    --> NEW
+  457                  N+   1 N   -1 el    --> NEW
+  458                  N-   1 N    1 el    --> NEW
+   78                 NO+   1 N    1 O   -1 el    OVERWRITE
+  459                NO2-   1 N    2 O    1 el    --> NEW
+   18                 N2+   2 N   -1 el    OVERWRITE
+  460                 N2-   2 N    1 el    --> NEW
+  461                N2O+   2 N    1 O   -1 el    --> NEW
+  462                 NA+   1 Na  -1 el    --> NEW
+  463                 NA-   1 Na   1 el    --> NEW
+  464                NAO-   1 Na   1 O    1 el    --> NEW
+  465                  O+   1 O   -1 el    --> NEW
+  466                  O-   1 O    1 el    --> NEW
+   19                 O2+   2 O   -1 el    OVERWRITE
+  467                 O2-   2 O    1 el    --> NEW
+  468                  P+   1 P   -1 el    --> NEW
+  469                  P-   1 P    1 el    --> NEW
+  470                  S+   1 S   -1 el    --> NEW
+  471                  S-   1 S    1 el    --> NEW
+  472                 SI+   1 Si  -1 el    --> NEW
+  473                 SI-   1 Si   1 el    --> NEW
+  474                 TI+   1 Ti  -1 el    --> NEW
+  475                 TI-   1 Ti   1 el    --> NEW
+  476                  V+   1 V   -1 el    --> NEW
+  477                  V-   1 V    1 el    --> NEW
+  478              LIALF4   1 Al   4 F    1 Li    --> NEW
+  479                 BE+   1 Be  -1 el    --> NEW
+  121                BECL   1 Be   1 Cl    OVERWRITE
+  480               BECL+   1 Be   1 Cl  -1 el    --> NEW
+  481               BECLF   1 Be   1 Cl   1 F    --> NEW
+  482               BECL2   1 Be   2 Cl    --> NEW
+  102                 BEF   1 Be   1 F    OVERWRITE
+  483                BEF2   1 Be   2 F    --> NEW
+  484              BEF3LI   1 Be   3 F    1 Li    --> NEW
+   25                 BEH   1 Be   1 H    OVERWRITE
+   43                BEH+   1 Be   1 H   -1 el    OVERWRITE
+  485                BEHO   1 Be   1 H    1 O    --> NEW
+  486               BEHO+   1 Be   1 H    1 O   -1 el    --> NEW
+  487                BEH2   1 Be   2 H    --> NEW
+  488              BEH2O2   1 Be   2 H    2 O    --> NEW
+  489                 BEN   1 Be   1 N    --> NEW
+   81                 BEO   1 Be   1 O    OVERWRITE
+  112                 BES   1 Be   1 S    OVERWRITE
+  490                 BE2   2 Be    --> NEW
+  491              BE2CL4   2 Be   4 Cl    --> NEW
+  492              BE2F2O   2 Be   2 F    1 O    --> NEW
+  493                BE2O   2 Be   1 O    --> NEW
+  494               BE2O2   2 Be   2 O    --> NEW
+  495               BE3O3   3 Be   3 O    --> NEW
+  496               BE4O4   4 Be   4 O    --> NEW
+  497               BE5O5   5 Be   5 O    --> NEW
+  498               BE6O6   6 Be   6 O    --> NEW
+  499                C2BE   2 C    1 Be    --> NEW
+  500              LI2CLF   1 Cl   1 F    2 Li    --> NEW
+  120                LICL   1 Cl   1 Li    OVERWRITE
+  501               LIOCL   1 Cl   1 Li   1 O    --> NEW
+  502                ZRCL   1 Cl   1 Zr    --> NEW
+  503             (LICL)2   2 Cl   2 Li    --> NEW
+  504               ZRCL2   2 Cl   1 Zr    --> NEW
+  505             (LICL)3   3 Cl   3 Li    --> NEW
+  506               ZRCL3   3 Cl   1 Zr    --> NEW
+  507               ZRCL4   4 Cl   1 Zr    --> NEW
+  101                 LIF   1 F    1 Li    OVERWRITE
+  508                LIOF   1 F    1 Li   1 O    --> NEW
+  509                 ZRF   1 F    1 Zr    --> NEW
+  510               LIF2-   2 F    1 Li   1 el    --> NEW
+  511               LI2F2   2 F    2 Li    --> NEW
+  512                ZRF2   2 F    1 Zr    --> NEW
+  513               LI3F3   3 F    3 Li    --> NEW
+  514                ZRF3   3 F    1 Zr    --> NEW
+  515                ZRF4   4 F    1 Zr    --> NEW
+   24                 LIH   1 H    1 Li    OVERWRITE
+  516                LIOH   1 H    1 Li   1 O    --> NEW
+  517               LIOH+   1 H    1 Li   1 O   -1 el    --> NEW
+  518                 ZRH   1 H    1 Zr    --> NEW
+  519             (LIOH)2   2 H    2 Li   2 O    --> NEW
+  520                 LI+   1 Li  -1 el    --> NEW
+  521                 LI-   1 Li   1 el    --> NEW
+  522                 LIN   1 Li   1 N    --> NEW
+  523                LINO   1 Li   1 N    1 O    --> NEW
+  524               LINAO   1 Li   1 Na   1 O    --> NEW
+   80                 LIO   1 Li   1 O    OVERWRITE
+  525                LIO-   1 Li   1 O    1 el    --> NEW
+    2                 LI2   2 Li    OVERWRITE
+  526                LI2O   2 Li   1 O    --> NEW
+  527               LI2O2   2 Li   2 O    --> NEW
+  528              LI2SO4   2 Li   4 O    1 S    --> NEW
+   77                 ZRN   1 N    1 Zr    OVERWRITE
+   96                 ZRO   1 O    1 Zr    OVERWRITE
+  529                ZRO2   2 O    1 Zr    --> NEW
+  530                 ZR+   1 Zr  -1 el    --> NEW
+  531                 ZR-   1 Zr   1 el    --> NEW
+ 
+ reading kp-data from data/dispol_WoitkeRefit.dat ...
+  532                 TIC   1 Ti   1 C    --> NEW
+   35                  HS   1 H    1 S    OVERWRITE
+  352                 PH2   2 H    1 P    OVERWRITE
+   34                  PH   1 H    1 P    OVERWRITE
+   73                  PN   1 N    1 P    OVERWRITE
+  372                 SO2   2 O    1 S    OVERWRITE
+  377                 SO3   3 O    1 S    OVERWRITE
+  370                 S2O   1 O    2 S    OVERWRITE
+  226               MGCLF   1 Cl   1 F    1 Mg    OVERWRITE
+  533            SI(CH3)4   1 Si   4 C   12 H    --> NEW
+  534            SICH3CL3   1 Si   1 C    3 H    3 Cl    --> NEW
+  378                P4O6   6 P    4 O    OVERWRITE
+  379               P4O10  10 P    4 O    OVERWRITE
+  355                 PH3   3 P    1 H    OVERWRITE
+  535                SIH2   2 H    1 Si    --> NEW
+  536                SIH3   3 H    1 Si    --> NEW
+  537                TIC2   2 C    1 Ti    --> NEW
+  538                 C3H   3 C    1 H    --> NEW
+  539                CRC2   2 C    1 Cr    --> NEW
+  540               SI2C2   2 C    2 Si    --> NEW
+  541                 VC2   2 C    1 V    --> NEW
+  542                TIC4   4 C    1 Ti    --> NEW
+  543                 VC4   4 C    1 V    --> NEW
+ 
+           1 H2                   ->  dispol_StockKitzmann_withoutTsuji.dat
+           2 LI2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+           3 C2                   ->  dispol_StockKitzmann_withoutTsuji.dat
+           4 N2                   ->  dispol_StockKitzmann_withoutTsuji.dat
+           5 O2                   ->  dispol_StockKitzmann_withoutTsuji.dat
+           6 F2                   ->  dispol_StockKitzmann_withoutTsuji.dat
+           7 NA2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+           8 MG2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+           9 AL2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          10 SI2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          11 P2                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          12 S2                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          13 CL2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          14 K2                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          15 H2+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          16 HE2+                 ->  dispol_BarklemCollet.dat
+          17 C2+                  ->  dispol_BarklemCollet.dat
+          18 N2+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          19 O2+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          20 P2+                  ->  dispol_BarklemCollet.dat
+          21 S2+                  ->  dispol_BarklemCollet.dat
+          22 H2-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          23 C2-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          24 LIH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          25 BEH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          26 CH                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          27 NH                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          28 OH                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          29 HF                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          30 NAH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          31 MGH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          32 ALH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          33 SIH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          34 PH                   ->  dispol_WoitkeRefit.dat
+          35 HS                   ->  dispol_WoitkeRefit.dat
+          36 HCL                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          37 KH                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          38 CAH                  ->  dispol_BarklemCollet.dat
+          39 TIH                  ->  dispol_BarklemCollet.dat
+          40 CRH                  ->  dispol_BarklemCollet.dat
+          41 FEH                  ->  dispol_BarklemCollet.dat
+          42 HEH+                 ->  dispol_BarklemCollet.dat
+          43 BEH+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+          44 CH+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          45 NH+                  ->  dispol_BarklemCollet.dat
+          46 OH+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          47 HF+                  ->  dispol_BarklemCollet.dat
+          48 MGH+                 ->  dispol_BarklemCollet.dat
+          49 ALH+                 ->  dispol_BarklemCollet.dat
+          50 SIH+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+          51 PH+                  ->  dispol_BarklemCollet.dat
+          52 SH+                  ->  dispol_BarklemCollet.dat
+          53 HCL+                 ->  dispol_BarklemCollet.dat
+          54 CH-                  ->  dispol_BarklemCollet.dat
+          55 OH-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          56 SIH-                 ->  dispol_BarklemCollet.dat
+          57 HS-                  ->  dispol_BarklemCollet.dat
+          58 CN                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          59 CO                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          60 CF                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          61 SIC                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          62 CP                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          63 CS                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          64 CCL                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          65 CN+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          66 CO+                  ->  dispol_BarklemCollet.dat
+          67 CN-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          68 CS-                  ->  dispol_BarklemCollet.dat
+          69 NO                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          70 FN                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          71 ALN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          72 SIN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          73 PN                   ->  dispol_WoitkeRefit.dat
+          74 SN                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          75 NCL                  ->  dispol_BarklemCollet.dat
+          76 TIN                  ->  dispol_BarklemCollet.dat
+          77 ZRN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          78 NO+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          79 NS+                  ->  dispol_BarklemCollet.dat
+          80 LIO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          81 BEO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          82 FO                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          83 NAO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          84 MGO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          85 ALO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          86 SIO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          87 PO                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          88 SO                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          89 CLO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          90 KO                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          91 CAO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          92 TIO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          93 VO                   ->  dispol_StockKitzmann_withoutTsuji.dat
+          94 CRO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          95 FEO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          96 ZRO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+          97 SIO+                 ->  dispol_BarklemCollet.dat
+          98 PO+                  ->  dispol_BarklemCollet.dat
+          99 SO+                  ->  dispol_BarklemCollet.dat
+         100 FEO-                 ->  dispol_BarklemCollet.dat
+         101 LIF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         102 BEF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         103 NAF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         104 MGF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         105 ALF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         106 SIF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         107 PF                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         108 SF                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         109 KF                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         110 CAF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         111 LINA                 ->  dispol_BarklemCollet.dat
+         112 BES                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         113 MGS                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         114 ALS                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         115 SIS                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         116 PS                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         117 CAS                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         118 TIS                  ->  dispol_BarklemCollet.dat
+         119 CRS                  ->  dispol_BarklemCollet.dat
+         120 LICL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         121 BECL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         122 NACL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         123 MGCL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         124 ALCL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         125 SICL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         126 PCL                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         127 KCL                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         128 CACL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         129 FECL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         130 ALCLF                ->  dispol_StockKitzmann_withoutTsuji.dat
+         131 ALCLF2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         132 ALOCL                ->  dispol_StockKitzmann_withoutTsuji.dat
+         133 ALCL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         134 ALCL2F               ->  dispol_StockKitzmann_withoutTsuji.dat
+         135 ALCL3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         136 ALOF                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         137 ALF2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         138 ALF2O                ->  dispol_StockKitzmann_withoutTsuji.dat
+         139 ALF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         140 NAALF4               ->  dispol_StockKitzmann_withoutTsuji.dat
+         141 ALOH                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         142 HALO                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         143 ALO2H                ->  dispol_StockKitzmann_withoutTsuji.dat
+         144 ALO2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         145 AL2CL6               ->  dispol_StockKitzmann_withoutTsuji.dat
+         146 (ALF3)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         147 AL2O                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         148 AL2O2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         149 ALC                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         150 CFCLO                ->  dispol_StockKitzmann_withoutTsuji.dat
+         151 CCLF3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         152 CCLN                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         153 CCLO                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         154 CCL2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         155 CCL2F2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         156 COCL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         157 CCL3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         158 CCL3F                ->  dispol_StockKitzmann_withoutTsuji.dat
+         159 CCL4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         160 CFN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         161 CFO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         162 CF2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         163 CF2O                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         164 CF3                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         165 CF4                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         166 CF4O                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         167 CF8S                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         168 CHCL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         169 CHCL3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         170 CHF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         171 CHFO                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         172 CHF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         173 HCN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         174 CHNO                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         175 HCO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         176 PCH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         177 CH2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         178 CH2CL2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         179 CH2CLF               ->  dispol_StockKitzmann_withoutTsuji.dat
+         180 CH2F2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         181 H2CO                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         182 CH3                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         183 CH3CL                ->  dispol_StockKitzmann_withoutTsuji.dat
+         184 CH3F                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         185 CH4                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         186 KCN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         187 NACN                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         188 CNO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         189 CNN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         190 NCN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         191 COS                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         192 CO2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         193 CS2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         194 SI2C                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         195 C2CL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         196 C2CL4                ->  dispol_StockKitzmann_withoutTsuji.dat
+         197 C2CL6                ->  dispol_StockKitzmann_withoutTsuji.dat
+         198 C2F2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         199 C2F3N                ->  dispol_StockKitzmann_withoutTsuji.dat
+         200 C2F4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         201 C2F6                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         202 C2H                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         203 C2HCL                ->  dispol_StockKitzmann_withoutTsuji.dat
+         204 C2HF                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         205 C2H2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         206 C2H4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         207 C2H4O                ->  dispol_StockKitzmann_withoutTsuji.dat
+         208 (KCN)2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         209 C2N                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         210 C2N2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         211 (NACN)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         212 SIC2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         213 C2O                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         214 C3                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         215 C3O2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         216 C4                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         217 C4N2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         218 C5                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         219 FE(CO)5              ->  dispol_StockKitzmann_withoutTsuji.dat
+         220 CACL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         221 CAF2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         222 CAOH                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         223 CA(OH)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         224 CA2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         225 CLF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         226 MGCLF                ->  dispol_WoitkeRefit.dat
+         227 CLFO2S               ->  dispol_StockKitzmann_withoutTsuji.dat
+         228 CLFO3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         229 PCLF2O               ->  dispol_StockKitzmann_withoutTsuji.dat
+         230 CLF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         231 CLF3SI               ->  dispol_StockKitzmann_withoutTsuji.dat
+         232 CLF5                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         233 CLF5S                ->  dispol_StockKitzmann_withoutTsuji.dat
+         234 CHCLF2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         235 CHCL2F               ->  dispol_StockKitzmann_withoutTsuji.dat
+         236 OHCL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         237 SIH3CL               ->  dispol_StockKitzmann_withoutTsuji.dat
+         238 NOCL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         239 NO2CL                ->  dispol_StockKitzmann_withoutTsuji.dat
+         240 TIOCL                ->  dispol_StockKitzmann_withoutTsuji.dat
+         241 CLO2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         242 CLO3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         243 SCL                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         244 CLS2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         245 TICL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         246 CL2FOP               ->  dispol_StockKitzmann_withoutTsuji.dat
+         247 FECL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         248 SIH2CL2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         249 (KCL)2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         250 MGCL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         251 (NACL)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         252 CLOCL                ->  dispol_StockKitzmann_withoutTsuji.dat
+         253 CLCLO                ->  dispol_StockKitzmann_withoutTsuji.dat
+         254 TIOCL2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         255 CLO2CL               ->  dispol_StockKitzmann_withoutTsuji.dat
+         256 CLOCLO               ->  dispol_StockKitzmann_withoutTsuji.dat
+         257 SO2CL2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         258 SCL2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         259 SICL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         260 TICL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         261 SIFCL3               ->  dispol_StockKitzmann_withoutTsuji.dat
+         262 FECL3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         263 SIHCL3               ->  dispol_StockKitzmann_withoutTsuji.dat
+         264 PCL3O                ->  dispol_StockKitzmann_withoutTsuji.dat
+         265 PCL3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         266 PCL3S                ->  dispol_StockKitzmann_withoutTsuji.dat
+         267 SICL3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         268 TICL3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         269 FE2CL4               ->  dispol_StockKitzmann_withoutTsuji.dat
+         270 MG2CL4               ->  dispol_StockKitzmann_withoutTsuji.dat
+         271 SICL4                ->  dispol_StockKitzmann_withoutTsuji.dat
+         272 TICL4                ->  dispol_StockKitzmann_withoutTsuji.dat
+         273 PCL5                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         274 (FECL3)2             ->  dispol_StockKitzmann_withoutTsuji.dat
+         275 CRN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         276 CRO2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         277 CRO3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         278 FEF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         279 FHO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         280 FHO3S                ->  dispol_StockKitzmann_withoutTsuji.dat
+         281 SIH3F                ->  dispol_StockKitzmann_withoutTsuji.dat
+         282 FNO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         283 FNO2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         284 FNO3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         285 TIOF                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         286 OFO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         287 FOO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         288 PSF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         289 TIF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         290 FEF2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         291 H2F2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         292 SIH2F2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         293 K2F2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         294 MGF2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         295 F2N                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         296 F2N2(cis)            ->  dispol_StockKitzmann_withoutTsuji.dat
+         297 F2N2(trans)          ->  dispol_StockKitzmann_withoutTsuji.dat
+         298 NA2F2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         299 F2O                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         300 F2OS                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         301 SIOF2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         302 TIOF2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         303 F2O2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         304 F2O2S                ->  dispol_StockKitzmann_withoutTsuji.dat
+         305 PF2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         306 SF2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         307 FSSF                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         308 F2S2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         309 SIF2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         310 TIF2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         311 FEF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         312 SIHF3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         313 F3H3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         314 NF3                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         315 NOF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         316 POF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         317 PF3                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         318 PSF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         319 SF3                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         320 SIF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         321 TIF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         322 F4H4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         323 MG2F4                ->  dispol_StockKitzmann_withoutTsuji.dat
+         324 N2F4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         325 SF4                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         326 SIF4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         327 TIF4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         328 F5H5                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         329 PF5                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         330 SF5                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         331 F6H6                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         332 SF6                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         333 F7H7                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         334 F10S2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         335 FE(OH)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         336 FES                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         337 KOH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         338 MGOH                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         339 HNO                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         340 HONO                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         341 HNO2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         342 HNO3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         343 NAOH                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         344 HO2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         345 (KOH)2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         346 MG(OH)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         347 NH2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         348 N2H2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         349 (NAOH)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         350 H2O                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         351 H2SO4                ->  dispol_StockKitzmann_withoutTsuji.dat
+         352 PH2                  ->  dispol_WoitkeRefit.dat
+         353 H2S                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         354 NH3                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         355 PH3                  ->  dispol_WoitkeRefit.dat
+         356 N2H4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         357 SIH4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         358 K2SO4                ->  dispol_StockKitzmann_withoutTsuji.dat
+         359 MGN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         360 NO2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         361 NO3                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         362 SI2N                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         363 VN                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         364 N2O                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         365 N2O3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         366 N2O4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         367 N2O5                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         368 N3                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         369 NA2SO4               ->  dispol_StockKitzmann_withoutTsuji.dat
+         370 S2O                  ->  dispol_WoitkeRefit.dat
+         371 PO2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         372 SO2                  ->  dispol_WoitkeRefit.dat
+         373 SIO2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         374 TIO2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         375 VO2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         376 O3                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         377 SO3                  ->  dispol_WoitkeRefit.dat
+         378 P4O6                 ->  dispol_WoitkeRefit.dat
+         379 P4O10                ->  dispol_WoitkeRefit.dat
+         380 P4                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         381 P4S3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         382 S3                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         383 S4                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         384 S5                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         385 S6                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         386 S7                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         387 S8                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         388 SI3                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         389 AL+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         390 AL-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         391 ALCL+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         392 ALCLF+               ->  dispol_StockKitzmann_withoutTsuji.dat
+         393 ALCL2+               ->  dispol_StockKitzmann_withoutTsuji.dat
+         394 ALCL2-               ->  dispol_StockKitzmann_withoutTsuji.dat
+         395 ALF+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         396 ALF2+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         397 ALF2-                ->  dispol_StockKitzmann_withoutTsuji.dat
+         398 ALF2O-               ->  dispol_StockKitzmann_withoutTsuji.dat
+         399 ALF4-                ->  dispol_StockKitzmann_withoutTsuji.dat
+         400 ALOH+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         401 ALOH-                ->  dispol_StockKitzmann_withoutTsuji.dat
+         402 ALO+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         403 ALO-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         404 ALO2-                ->  dispol_StockKitzmann_withoutTsuji.dat
+         405 AL2O+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         406 AL2O2+               ->  dispol_StockKitzmann_withoutTsuji.dat
+         407 C+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         408 C-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         409 CF+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         410 CF2+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         411 CF3+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         412 HCO+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         413 CO2-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         414 CA+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         415 CAOH+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         416 CL+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         417 MGCL+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         418 SCL+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         419 CL-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         420 SCL2+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         421 CR+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         422 CR-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         423 F+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         424 F-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         425 MGF+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         426 PF+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         427 PF-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         428 SF+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         429 SF-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         430 F2K-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         431 MGF2+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         432 NAF2-                ->  dispol_StockKitzmann_withoutTsuji.dat
+         433 PF2+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         434 PF2-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         435 SF2+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         436 SF2-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         437 SF3+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         438 SF3-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         439 SF4+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         440 SF4-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         441 SF5+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         442 SF5-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         443 SF6-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         444 FE+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         445 FE-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         446 H+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         447 H-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         448 KOH+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         449 MGOH+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         450 NAOH+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         451 H3O+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         452 HE+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         453 K+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         454 K-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         455 KO-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         456 MG+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         457 N+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         458 N-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         459 NO2-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         460 N2-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         461 N2O+                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         462 NA+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         463 NA-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         464 NAO-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         465 O+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         466 O-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         467 O2-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         468 P+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         469 P-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         470 S+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         471 S-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         472 SI+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         473 SI-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         474 TI+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         475 TI-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         476 V+                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         477 V-                   ->  dispol_StockKitzmann_withoutTsuji.dat
+         478 LIALF4               ->  dispol_StockKitzmann_withoutTsuji.dat
+         479 BE+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         480 BECL+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         481 BECLF                ->  dispol_StockKitzmann_withoutTsuji.dat
+         482 BECL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         483 BEF2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         484 BEF3LI               ->  dispol_StockKitzmann_withoutTsuji.dat
+         485 BEHO                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         486 BEHO+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         487 BEH2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         488 BEH2O2               ->  dispol_StockKitzmann_withoutTsuji.dat
+         489 BEN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         490 BE2                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         491 BE2CL4               ->  dispol_StockKitzmann_withoutTsuji.dat
+         492 BE2F2O               ->  dispol_StockKitzmann_withoutTsuji.dat
+         493 BE2O                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         494 BE2O2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         495 BE3O3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         496 BE4O4                ->  dispol_StockKitzmann_withoutTsuji.dat
+         497 BE5O5                ->  dispol_StockKitzmann_withoutTsuji.dat
+         498 BE6O6                ->  dispol_StockKitzmann_withoutTsuji.dat
+         499 C2BE                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         500 LI2CLF               ->  dispol_StockKitzmann_withoutTsuji.dat
+         501 LIOCL                ->  dispol_StockKitzmann_withoutTsuji.dat
+         502 ZRCL                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         503 (LICL)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         504 ZRCL2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         505 (LICL)3              ->  dispol_StockKitzmann_withoutTsuji.dat
+         506 ZRCL3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         507 ZRCL4                ->  dispol_StockKitzmann_withoutTsuji.dat
+         508 LIOF                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         509 ZRF                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         510 LIF2-                ->  dispol_StockKitzmann_withoutTsuji.dat
+         511 LI2F2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         512 ZRF2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         513 LI3F3                ->  dispol_StockKitzmann_withoutTsuji.dat
+         514 ZRF3                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         515 ZRF4                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         516 LIOH                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         517 LIOH+                ->  dispol_StockKitzmann_withoutTsuji.dat
+         518 ZRH                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         519 (LIOH)2              ->  dispol_StockKitzmann_withoutTsuji.dat
+         520 LI+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         521 LI-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         522 LIN                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         523 LINO                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         524 LINAO                ->  dispol_StockKitzmann_withoutTsuji.dat
+         525 LIO-                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         526 LI2O                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         527 LI2O2                ->  dispol_StockKitzmann_withoutTsuji.dat
+         528 LI2SO4               ->  dispol_StockKitzmann_withoutTsuji.dat
+         529 ZRO2                 ->  dispol_StockKitzmann_withoutTsuji.dat
+         530 ZR+                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         531 ZR-                  ->  dispol_StockKitzmann_withoutTsuji.dat
+         532 TIC                  ->  dispol_WoitkeRefit.dat
+         533 SI(CH3)4             ->  dispol_WoitkeRefit.dat
+         534 SICH3CL3             ->  dispol_WoitkeRefit.dat
+         535 SIH2                 ->  dispol_WoitkeRefit.dat
+         536 SIH3                 ->  dispol_WoitkeRefit.dat
+         537 TIC2                 ->  dispol_WoitkeRefit.dat
+         538 C3H                  ->  dispol_WoitkeRefit.dat
+         539 CRC2                 ->  dispol_WoitkeRefit.dat
+         540 SI2C2                ->  dispol_WoitkeRefit.dat
+         541 VC2                  ->  dispol_WoitkeRefit.dat
+         542 TIC4                 ->  dispol_WoitkeRefit.dat
+         543 VC4                  ->  dispol_WoitkeRefit.dat
+ 
+         543  species
+          23  elements
+   H  He   C   N   O  Na  Mg  Si   F  Fe  Al  Ca  Cr  Ti   S  Cl   K  Li   V  Zr  Be   P  el
+   1   2   6   7   8  11  12  14   9  26  13  20  24  22  16  17  19   3  23  40   4  15   0
+  12   2   5   3  10   2   2   3  10   2   2   2   1   1   8   6   2   3   1   1   6   4   1
+   H+ HE+  C+  N+  O+ NA+ MG+ SI+  F+ FE+ AL+ CA+ CR+ TI+  S+ CL+  K+ LI+  V+ ZR+ BE+  P+    
+ 
+ reading DustChem.dat ...
+ ========================
+ --- dust species ---
+   1 Al2O3[s]             rhod= 3.970 V0=  4.265E-23   2xAl  3xO 
+   2 Al2O3[l]             rhod= 2.780 V0=  6.090E-23   2xAl  3xO 
+   3 MgAl2O4[s]           rhod= 3.580 V0=  6.599E-23   1xMg  2xAl  4xO 
+   4 MgAl2O4[l]           rhod= 2.750 V0=  8.590E-23   1xMg  2xAl  4xO 
+   5 TiO2[s]              rhod= 4.230 V0=  3.135E-23   1xTi  2xO 
+   6 TiO2[l]              rhod= 3.400 V0=  3.901E-23   1xTi  2xO 
+   7 Ti4O7[s]             rhod= 4.190 V0=  1.203E-22   4xTi  7xO 
+   8 Ti4O7[l]             rhod= 3.400 V0=  1.482E-22   4xTi  7xO 
+   9 Mg2SiO4[s]           rhod= 3.210 V0=  7.278E-23   2xMg  1xSi  4xO 
+  10 Mg2SiO4[l]           rhod= 2.600 V0=  8.986E-23   2xMg  1xSi  4xO 
+  11 MgSiO3[s]            rhod= 3.190 V0=  5.226E-23   1xMg  1xSi  3xO 
+  12 MgSiO3[l]            rhod= 2.600 V0=  6.411E-23   1xMg  1xSi  3xO 
+  13 Fe[s]                rhod= 7.870 V0=  1.178E-23   1xFe
+  14 Fe[l]                rhod= 6.980 V0=  1.329E-23   1xFe
+  15 Fe2SiO4[s]           rhod= 4.390 V0=  7.708E-23   2xFe  1xSi  4xO 
+  16 FeS[s]               rhod= 4.830 V0=  3.022E-23   1xFe  1xS 
+  17 FeS[l]               rhod= 3.900 V0=  3.743E-23   1xFe  1xS 
+  18 MgTi2O5[s]           rhod= 4.640 V0=  7.159E-23   1xMg  2xTi  5xO 
+  19 MgTi2O5[l]           rhod= 3.700 V0=  8.977E-23   1xMg  2xTi  5xO 
+  20 C[s]                 rhod= 2.270 V0=  8.786E-24   1xC 
+  21 TiC[s]               rhod= 4.930 V0=  2.017E-23   1xTi  1xC 
+  22 TiC[l]               rhod= 3.900 V0=  2.549E-23   1xTi  1xC 
+  23 SiC[s]               rhod= 3.210 V0=  2.074E-23   1xSi  1xC 
+  24 SiO[s]               rhod= 2.180 V0=  3.358E-23   1xSi  1xO 
+  25 SiO2[s]              rhod= 2.648 V0=  3.768E-23   1xSi  2xO 
+  26 SiO2[l]              rhod= 2.100 V0=  4.751E-23   1xSi  2xO 
+  27 Zr[s]                rhod= 6.520 V0=  2.323E-23   1xZr
+  28 Zr[l]                rhod= 5.800 V0=  2.612E-23   1xZr
+  29 ZrO2[s]              rhod= 5.680 V0=  3.602E-23   1xZr  2xO 
+  30 ZrO2[l]              rhod= 5.000 V0=  4.092E-23   1xZr  2xO 
+  31 ZrSiO4[s]            rhod= 4.560 V0=  6.675E-23   1xZr  1xSi  4xO 
+  32 MgO[s]               rhod= 3.580 V0=  1.869E-23   1xMg  1xO 
+  33 MgO[l]               rhod= 2.900 V0=  2.308E-23   1xMg  1xO 
+  34 FeO[s]               rhod= 5.990 V0=  1.992E-23   1xFe  1xO 
+  35 FeO[l]               rhod= 5.500 V0=  2.169E-23   1xFe  1xO 
+  36 Na2SiO3[s]           rhod= 2.400 V0=  8.445E-23   2xNa  1xSi  3xO 
+  37 Na2SiO3[l]           rhod= 1.900 V0=  1.067E-22   2xNa  1xSi  3xO 
+  38 H2O[s]               rhod= 0.930 V0=  3.217E-23   2xH   1xO 
+  39 H2O[l]               rhod= 1.000 V0=  2.991E-23   2xH   1xO 
+  40 NH3[s]               rhod= 0.870 V0=  3.251E-23   1xN   3xH 
+  41 CH4[s]               rhod= 0.656 V0=  4.061E-23   1xC   4xH 
+  42 CO[s]                rhod= 1.140 V0=  4.080E-23   1xC   1xO 
+  43 CO2[s]               rhod= 1.980 V0=  3.691E-23   1xC   2xO 
+  44 H2SO4[s]             rhod= 1.600 V0=  1.018E-22   2xH   1xS   4xO 
+  45 H2SO4[l]             rhod= 1.830 V0=  8.899E-23   2xH   1xS   4xO 
+  46 Na[s]                rhod= 0.968 V0=  3.944E-23   1xNa
+  47 Na[l]                rhod= 0.927 V0=  4.118E-23   1xNa
+  48 NaCl[s]              rhod= 2.165 V0=  4.482E-23   1xNa  1xCl
+  49 NaCl[l]              rhod= 1.300 V0=  7.465E-23   1xNa  1xCl
+  50 KCl[s]               rhod= 1.990 V0=  6.221E-23   1xK   1xCl
+  51 KCl[l]               rhod= 1.600 V0=  7.737E-23   1xK   1xCl
+  52 S[s]                 rhod= 2.050 V0=  2.597E-23   1xS 
+  53 S[l]                 rhod= 1.700 V0=  3.132E-23   1xS 
+  54 MgS[s]               rhod= 2.680 V0=  3.492E-23   1xMg  1xS 
+  55 LiCl[s]              rhod= 2.070 V0=  3.401E-23   1xLi  1xCl
+  56 LiCl[l]              rhod= 1.700 V0=  4.141E-23   1xLi  1xCl
+  57 AlCl3[s]             rhod= 2.480 V0=  8.928E-23   1xAl  3xCl
+  58 AlCl3[l]             rhod= 2.000 V0=  1.107E-22   1xAl  3xCl
+  59 CaO[s]               rhod= 3.350 V0=  2.780E-23   1xCa  1xO 
+  60 CaO[l]               rhod= 2.700 V0=  3.449E-23   1xCa  1xO 
+  61 CaCl2[s]             rhod= 2.150 V0=  8.571E-23   1xCa  2xCl
+  62 CaCl2[l]             rhod= 1.700 V0=  1.084E-22   1xCa  2xCl
+  63 LiH[s]               rhod= 0.780 V0=  1.692E-23   1xLi  1xH 
+  64 LiH[l]               rhod= 0.620 V0=  2.129E-23   1xLi  1xH 
+  65 MgTiO3[s]            rhod= 3.880 V0=  5.143E-23   1xMg  1xTi  3xO 
+  66 MgTiO3[l]            rhod= 3.100 V0=  6.437E-23   1xMg  1xTi  3xO 
+  67 K2SiO3[s]            rhod= 2.400 V0=  1.067E-22   2xK   1xSi  3xO 
+  68 K2SiO3[l]            rhod= 1.900 V0=  1.348E-22   2xK   1xSi  3xO 
+  69 Ti[s]                rhod= 4.510 V0=  1.762E-23   1xTi
+  70 Ti[l]                rhod= 4.140 V0=  1.920E-23   1xTi
+  71 TiO[s]               rhod= 4.950 V0=  2.142E-23   1xTi  1xO 
+  72 TiO[l]               rhod= 4.000 V0=  2.651E-23   1xTi  1xO 
+  73 LiOH[s]              rhod= 1.460 V0=  2.724E-23   1xLi  1xO   1xH 
+  74 LiOH[l]              rhod= 1.200 V0=  3.314E-23   1xLi  1xO   1xH 
+  75 VO[s]                rhod= 5.760 V0=  1.930E-23   1xV   1xO 
+  76 VO[l]                rhod= 5.200 V0=  2.138E-23   1xV   1xO 
+  77 V2O3[s]              rhod= 4.950 V0=  5.028E-23   2xV   3xO 
+  78 V2O4[s]              rhod= 4.090 V0=  6.735E-23   2xV   4xO 
+  79 V2O5[s]              rhod= 3.370 V0=  8.962E-23   2xV   5xO 
+  80 CaS[s]               rhod= 2.590 V0=  4.625E-23   1xCa  1xS 
+  81 FeS2[s]              rhod= 4.900 V0=  4.065E-23   1xFe  2xS 
+  82 Na2S[s]              rhod= 1.860 V0=  6.967E-23   2xNa  1xS 
+  83 Cr[s]                rhod= 7.190 V0=  1.201E-23   1xCr
+  84 Cr[l]                rhod= 6.300 V0=  1.371E-23   1xCr
+  85 CrN[s]               rhod= 6.090 V0=  1.800E-23   1xCr  1xN 
+  86 CaSiO3[s]            rhod= 2.910 V0=  6.629E-23   1xCa  1xSi  3xO 
+  87 CaTiO3[s]            rhod= 3.980 V0=  5.672E-23   1xCa  1xTi  3xO 
+  88 Ca2Al2SiO7[s]        rhod= 3.040 V0=  1.498E-22   2xCa  2xAl  1xSi  7xO 
+  89 Ca3Al2Si3O12[s]      rhod= 3.590 V0=  2.084E-22   3xCa  2xAl  3xSi 12xO 
+  90 Ca2SiO4[s]           rhod= 3.340 V0=  8.563E-23   2xCa  1xSi  4xO 
+  91 CaAl2SiO6[s]         rhod= 3.440 V0=  1.053E-22   1xCa  2xAl  1xSi  6xO 
+  92 Ca3Si2O7[s]          rhod= 2.980 V0=  1.607E-22   3xCa  2xSi  7xO 
+  93 Ca5P3O12F[s]         rhod= 3.100 V0=  2.701E-22   5xCa  3xP  12xO   1xF 
+  94 Ca3MgSi2O8[s]        rhod= 3.150 V0=  1.733E-22   3xCa  1xMg  2xSi  8xO 
+  95 CaAl2Si2O8[s]        rhod= 2.760 V0=  1.674E-22   1xCa  2xAl  2xSi  8xO 
+  96 CaTiSiO5[s]          rhod= 3.520 V0=  9.247E-23   1xCa  1xTi  1xSi  5xO 
+  97 Ca2MgSi2O7[s]        rhod= 2.940 V0=  1.540E-22   2xCa  1xMg  2xSi  7xO 
+  98 Al2SiO5[s]           rhod= 3.140 V0=  8.569E-23   2xAl  1xSi  5xO 
+  99 CaMgSiO4[s]          rhod= 3.040 V0=  8.547E-23   1xCa  1xMg  1xSi  4xO 
+ 100 CaMgSi2O6[s]         rhod= 3.280 V0=  1.096E-22   1xCa  1xMg  2xSi  6xO 
+ 101 MgAl2SiO6[s]         rhod= 3.000 V0=  1.120E-22   1xMg  2xAl  1xSi  6xO 
+ 102 KMg3AlSi3O10F2[s]    rhod= 2.880 V0=  2.429E-22   1xK   3xMg  1xAl  3xSi 10xO   2xF 
+ 103 Mg3Al2Si3O12[s]      rhod= 3.560 V0=  1.880E-22   3xMg  2xAl  3xSi 12xO 
+ 104 Ca2Al3Si3O13H[s]     rhod= 3.340 V0=  2.259E-22   2xCa  3xAl  3xSi 13xO   1xH 
+ 105 CaSi2O5[s]           rhod= 3.000 V0=  9.755E-23   1xCa  2xSi  5xO 
+ 106 Ca5Si2CO11[s]        rhod= 3.000 V0=  2.461E-22   5xCa  2xSi  1xC  11xO 
+ 107 KAlSi3O8[s]          rhod= 2.560 V0=  1.805E-22   1xK   1xAl  3xSi  8xO 
+ 108 Ca5P3O13H[s]         rhod= 3.000 V0=  2.780E-22   5xCa  3xP  13xO   1xH 
+ 109 KAlSiO4[s]           rhod= 2.640 V0=  9.948E-23   1xK   1xAl  1xSi  4xO 
+ 110 KAlSi2O6[s]          rhod= 2.460 V0=  1.473E-22   1xK   1xAl  2xSi  6xO 
+ 111 NaAlSi3O8[s]         rhod= 2.620 V0=  1.662E-22   1xNa  1xAl  3xSi  8xO 
+ 112 NaAlSi2O6[s]         rhod= 2.270 V0=  1.479E-22   1xNa  1xAl  2xSi  6xO 
+ 113 NaAlSiO4[s]          rhod= 2.620 V0=  9.003E-23   1xNa  1xAl  1xSi  4xO 
+ 114 CaAl4Si2O12H2[s]     rhod= 3.080 V0=  2.147E-22   1xCa  4xAl  2xSi 12xO   2xH 
+ 115 Ca2Al2Si3O12H2[s]    rhod= 2.940 V0=  2.329E-22   2xCa  2xAl  3xSi 12xO   2xH 
+ 116 Ca2FeAl2Si3O13H[s]   rhod= 3.470 V0=  2.312E-22   2xCa  1xFe  2xAl  3xSi 13xO   1xH 
+ 117 Ca5Si2C2O13[s]       rhod= 3.000 V0=  2.704E-22   5xCa  2xSi  2xC  13xO 
+ 118 Ca3Fe2Si3O12[s]      rhod= 3.850 V0=  2.192E-22   3xCa  2xFe  3xSi 12xO 
+ 119 KMg2Al3Si2O12H2[s]   rhod= 3.000 V0=  2.318E-22   1xK   2xMg  3xAl  2xSi 12xO   2xH 
+ 120 CaFeSi2O6[s]         rhod= 3.630 V0=  1.135E-22   1xCa  1xFe  2xSi  6xO 
+ 121 Mg3Cr2Si3O12[s]      rhod= 3.000 V0=  2.508E-22   3xMg  2xCr  3xSi 12xO 
+ 122 K2Si4O9[s]           rhod= 3.000 V0=  1.852E-22   2xK   4xSi  9xO 
+ 123 Mg2Al2Si3O12H2[s]    rhod= 3.000 V0=  2.108E-22   2xMg  2xAl  3xSi 12xO   2xH 
+ 124 KAl3Si3O12H2[s]      rhod= 2.830 V0=  2.337E-22   1xK   3xAl  3xSi 12xO   2xH 
+ 125 KMg3AlSi3O12H2[s]    rhod= 2.790 V0=  2.483E-22   1xK   3xMg  1xAl  3xSi 12xO   2xH 
+ 126 NaAl3Si3O12H2[s]     rhod= 2.880 V0=  2.204E-22   1xNa  3xAl  3xSi 12xO   2xH 
+ 127 AlSi2O6H[s]          rhod= 2.850 V0=  1.050E-22   1xAl  2xSi  6xO   1xH 
+ 128 NaMg3AlSi3O12H2[s]   rhod= 3.000 V0=  2.220E-22   1xNa  3xMg  1xAl  3xSi 12xO   2xH 
+ 129 FeAl2O4[s]           rhod= 3.820 V0=  7.555E-23   1xFe  2xAl  4xO 
+ 130 Mg3Si4O12H2[s]       rhod= 2.780 V0=  2.265E-22   3xMg  4xSi 12xO   2xH 
+ 131 KMgAlSi4O12H2[s]     rhod= 2.530 V0=  2.604E-22   1xK   1xMg  1xAl  4xSi 12xO   2xH 
+ 132 NaCrSi2O6[s]         rhod= 3.000 V0=  1.257E-22   1xNa  1xCr  2xSi  6xO 
+ 133 Ca2FeAlSi3O12H2[s]   rhod= 3.000 V0=  2.442E-22   2xCa  1xFe  1xAl  3xSi 12xO   2xH 
+ 134 Ca2Fe2AlSi3O13H[s]   rhod= 3.000 V0=  2.834E-22   2xCa  2xFe  1xAl  3xSi 13xO   1xH 
+ 135 MgAl2SiO7H2[s]       rhod= 3.000 V0=  1.220E-22   1xMg  2xAl  1xSi  7xO   2xH 
+ 136 CaAl2Si4O14H4[s]     rhod= 2.320 V0=  3.109E-22   1xCa  2xAl  4xSi 14xO   4xH 
+ 137 KAlSi3O9H2[s]        rhod= 3.000 V0=  1.640E-22   1xK   1xAl  3xSi  9xO   2xH 
+ 138 Fe3Al2Si3O12[s]      rhod= 4.320 V0=  1.913E-22   3xFe  2xAl  3xSi 12xO 
+ 139 Al2SiO6H2[s]         rhod= 3.000 V0=  9.967E-23   2xAl  1xSi  6xO   2xH 
+ 140 KFeAlSi4O12H2[s]     rhod= 3.000 V0=  2.371E-22   1xK   1xFe  1xAl  4xSi 12xO   2xH 
+ 141 NaFeSi2O6[s]         rhod= 3.590 V0=  1.068E-22   1xNa  1xFe  2xSi  6xO 
+ 142 NaAlSi2O7H2[s]       rhod= 2.270 V0=  1.610E-22   1xNa  1xAl  2xSi  7xO   2xH 
+ 143 CaAl2Si2O10H4[s]     rhod= 3.100 V0=  1.683E-22   1xCa  2xAl  2xSi 10xO   4xH 
+ 144 MgCr2O4[s]           rhod= 3.000 V0=  1.064E-22   1xMg  2xCr  4xO 
+ 145 MgAl2Si2O10H4[s]     rhod= 3.000 V0=  1.652E-22   1xMg  2xAl  2xSi 10xO   4xH 
+ 146 FeTiO3[s]            rhod= 3.000 V0=  8.397E-23   1xFe  1xTi  3xO 
+ 147 AlO2H[s]             rhod= 3.070 V0=  3.245E-23   1xAl  2xO   1xH 
+ 148 FeAl2SiO7H2[s]       rhod= 3.610 V0=  1.159E-22   1xFe  2xAl  1xSi  7xO   2xH 
+ 149 Mg7Si2O14H6[s]       rhod= 3.000 V0=  2.526E-22   7xMg  2xSi 14xO   6xH 
+ 150 CaCO3[s]             rhod= 2.930 V0=  5.672E-23   1xCa  1xC   3xO 
+ 151 Mg3Si2O9H4[s]        rhod= 2.550 V0=  1.805E-22   3xMg  2xSi  9xO   4xH 
+ 152 Al2Si2O9H4[s]        rhod= 2.600 V0=  1.649E-22   2xAl  2xSi  9xO   4xH 
+ 153 FeSiO3[s]            rhod= 3.000 V0=  7.302E-23   1xFe  1xSi  3xO 
+ 154 CaSO4[s]             rhod= 2.960 V0=  7.637E-23   1xCa  1xS   4xO 
+ 155 KFe3AlSi3O12H2[s]    rhod= 3.320 V0=  2.560E-22   1xK   3xFe  1xAl  3xSi 12xO   2xH 
+ 156 CaMgC2O6[s]          rhod= 2.860 V0=  1.071E-22   1xCa  1xMg  2xC   6xO 
+ 157 CaAl2Si4O16H8[s]     rhod= 2.270 V0=  3.441E-22   1xCa  2xAl  4xSi 16xO   8xH 
+ 158 FeAl2Si2O10H4[s]     rhod= 3.000 V0=  1.827E-22   1xFe  2xAl  2xSi 10xO   4xH 
+ 159 Fe3Si4O12H2[s]       rhod= 3.200 V0=  2.459E-22   3xFe  4xSi 12xO   2xH 
+ 160 Cr2O3[s]             rhod= 3.000 V0=  8.413E-23   2xCr  3xO 
+ 161 MgCO3[s]             rhod= 3.010 V0=  4.651E-23   1xMg  1xC   3xO 
+ 162 Fe2TiO4[s]           rhod= 3.000 V0=  1.237E-22   2xFe  1xTi  4xO 
+ 163 MgFe2O4[s]           rhod= 3.000 V0=  1.107E-22   1xMg  2xFe  4xO 
+ 164 CaFeC2O6[s]          rhod= 3.000 V0=  1.195E-22   1xCa  1xFe  2xC   6xO 
+ 165 NaAlCO5H2[s]         rhod= 3.000 V0=  7.970E-23   1xNa  1xAl  1xC   5xO   2xH 
+ 166 MgO2H2[s]            rhod= 2.370 V0=  4.086E-23   1xMg  2xO   2xH 
+ 167 Fe3Si2O9H4[s]        rhod= 3.230 V0=  1.911E-22   3xFe  2xSi  9xO   4xH 
+ 168 Fe2O3[s]             rhod= 5.270 V0=  5.032E-23   2xFe  3xO 
+ 169 Fe3O4[s]             rhod= 5.200 V0=  7.394E-23   3xFe  4xO 
+ 170 FeCO3[s]             rhod= 3.940 V0=  4.883E-23   1xFe  1xC   3xO 
+ 171 FeO2H[s]             rhod= 4.260 V0=  3.463E-23   1xFe  2xO   1xH 
+ 172 NH4Cl[s]             rhod= 1.520 V0=  5.843E-23   1xN   4xH   1xCl
+ 173 NH4SH[s]             rhod= 1.170 V0=  7.253E-23   1xN   5xH   1xS 
+ 174 H2S[s]               rhod= 1.120 V0=  5.052E-23   2xH   1xS 
+ 175 S2[s]                rhod= 2.070 V0=  5.144E-23   2xS 
+ 176 S8[s]                rhod= 2.070 V0=  2.057E-22   8xS 
+ 177 P[s]                 rhod= 1.820 V0=  2.826E-23   1xP 
+ 178 P[l]                 rhod= 1.740 V0=  2.956E-23   1xP 
+ 179 P4O10[s]             rhod= 2.390 V0=  1.972E-22   4xP  10xO 
+ 180 P4S3[s]              rhod= 2.080 V0=  1.757E-22   4xP   3xS 
+ 181 P4S3[l]              rhod= 2.000 V0=  1.827E-22   4xP   3xS 
+ 182 H3PO4[s]             rhod= 2.030 V0=  8.016E-23   3xH   1xP   4xO 
+ 183 H3PO4[l]             rhod= 1.880 V0=  8.656E-23   3xH   1xP   4xO 
+ 184 Mg3P2O8[s]           rhod= 3.060 V0=  1.426E-22   3xMg  2xP   8xO 
+ 185 P3N5[s]              rhod= 2.770 V0=  9.769E-23   3xP   5xN 
+ 186 AlF3[s]              rhod= 2.880 V0=  4.842E-23   1xAl  3xF 
+ 187 CaF2[s]              rhod= 3.180 V0=  4.077E-23   1xCa  2xF 
+ 188 KF[s]                rhod= 2.480 V0=  3.890E-23   1xK   1xF 
+ 189 NaF[s]               rhod= 2.560 V0=  2.724E-23   1xNa  1xF 
+ 190 FeF2[s]              rhod= 4.090 V0=  3.810E-23   1xFe  2xF 
+ 191 MgF2[s]              rhod= 3.150 V0=  3.284E-23   1xMg  2xF 
+ 192 MgF2[l]              rhod= 2.400 V0=  4.311E-23   1xMg  2xF 
+ 193 HF2K[s]              rhod= 2.370 V0=  5.472E-23   1xH   2xF   1xK 
+ 194 AlF6Na3[s]           rhod= 2.950 V0=  1.182E-22   1xAl  6xF   3xNa
+ 195 Li2SiO3[s]           rhod= 2.520 V0=  5.928E-23   2xLi  1xSi  3xO 
+ 196 Li2SiO3[l]           rhod= 2.200 V0=  6.790E-23   2xLi  1xSi  3xO 
+ 197 Li2Si2O5[s]          rhod= 2.470 V0=  1.009E-22   2xLi  2xSi  5xO 
+ 198 Li2Si2O5[l]          rhod= 2.100 V0=  1.186E-22   2xLi  2xSi  5xO 
+ 199 Li2TiO3[s]           rhod= 3.430 V0=  7.264E-23   2xLi  2xSi  5xO 
+ 200 Li2TiO3[l]           rhod= 3.000 V0=  8.305E-23   2xLi  2xSi  5xO 
+ 201 Ti3O5[s]             rhod= 4.250 V0=  8.736E-23   3xTi  5xO 
+ 202 Ti3O5[l]             rhod= 3.800 V0=  9.771E-23   3xTi  5xO 
+ 203 Mg2TiO4[s]           rhod= 4.030 V0=  6.612E-23   2xMg  1xTi  4xO 
+ 204 Mg2TiO4[l]           rhod= 3.700 V0=  7.202E-23   2xMg  1xTi  4xO 
+ 205 TiN[s]               rhod= 5.400 V0=  1.903E-23   1xTi  1xN 
+ 206 TiN[l]               rhod= 5.000 V0=  2.055E-23   1xTi  1xN 
+ 207 TiF4[s]              rhod= 2.800 V0=  7.346E-23   1xTi  4xF 
+ 208 TiF3[s]              rhod= 3.400 V0=  5.121E-23   1xTi  3xF 
+ 209 TiCl4[s]             rhod= 1.900 V0=  1.658E-22   1xTi  4xCl
+ 210 TiCl4[l]             rhod= 1.730 V0=  1.821E-22   1xTi  4xCl
+ 211 TiCl3[s]             rhod= 2.640 V0=  9.700E-23   1xTi  3xCl
+ 212 TiCl2[s]             rhod= 3.130 V0=  6.301E-23   1xTi  2xCl
+ 213 TiH2[s]              rhod= 3.750 V0=  2.209E-23   1xTi  2xH 
+ 214 FeCl2[s]             rhod= 3.160 V0=  6.660E-23   1xFe  2xCl
+ 215 FeCl2[l]             rhod= 3.000 V0=  7.016E-23   1xFe  2xCl
+ 216 FeCl3[s]             rhod= 2.900 V0=  9.287E-23   1xFe  3xCl
+ 217 FeCl3[l]             rhod= 2.700 V0=  9.975E-23   1xFe  3xCl
+         217  condensed species
+ 
+ --- involved elements ---
+           1  Al          13
+           2  O            8
+           3  Mg          12
+           4  Ti          22
+           5  Si          14
+           6  Fe          26
+           7  S           16
+           8  C            6
+           9  Zr          40
+          10  Na          11
+          11  H            1
+          12  N            7
+          13  Cl          17
+          14  K           19
+          15  Li           3
+          16  Ca          20
+          17  V           23
+          18  Cr          24
+          19  P           15
+          20  F            9
+ 
+p-it=  1  mu=  2.335538198088E+00  4.151175003629E-01
+p-it=  2  mu=  2.335597301905E+00  2.530565354310E-05
+p-it=  3  mu=  2.335597302886E+00  4.203312553608E-10
+p-it=  4  mu=  2.335597302886E+00 -1.251764547536E-15
+ 
+ ----- total nuclei dens. and fractions in gas -----
+ n<H >=1.5682E+20  1.0000E+00
+ n<He>=1.3347E+19  1.0000E+00
+ n<C >=4.8461E+16  1.0000E+00
+ n<N >=9.4491E+15  1.0000E+00
+ n<O >=8.6176E+16  1.0000E+00
+ n<Na>=2.7251E+14  1.0000E+00
+ n<Mg>=5.8262E+15  1.0000E+00
+ n<Si>=5.0744E+15  1.0000E+00
+ n<F >=5.6936E+12  1.0000E+00
+ n<Fe>=4.1247E+15  1.0000E+00
+ n<Al>=4.6279E+14  1.0000E+00
+ n<Ca>=3.7617E+14  1.0000E+00
+ n<Cr>=6.8452E+13  1.0000E+00
+ n<Ti>=1.5325E+13  1.0000E+00
+ n<S >=2.1647E+15  1.0000E+00
+ n<Cl>=4.9589E+13  1.0000E+00
+ n<K >=2.0672E+13  1.0000E+00
+ n<Li>=1.7595E+09  1.0000E+00
+ n<V >=1.5682E+12  1.0000E+00
+ n<Zr>=5.9620E+10  1.0000E+00
+ n<Be>=3.7617E+09  1.0000E+00
+ n<P >=3.5924E+13  1.0000E+00
+ 
+ ----- atoms and ions [cm3] -----
+  nel=2.286E+05
+  nHI=2.259E+11   nHII=1.295E-39
+ nHeI=1.335E+19  nHeII=1.316E-83
+  nCI=3.888E-12   nCII=4.056E-51
+  nNI=1.036E-03   nNII=8.252E-58
+  nOI=2.077E-03   nOII=9.431E-54
+ nNaI=2.276E+14  nNaII=2.691E+04
+ nMgI=1.776E+15  nMgII=9.420E-07
+ nSiI=1.296E+04  nSiII=8.555E-21
+  nFI=4.136E-05   nFII=4.059E-73
+ nFeI=5.299E+14  nFeII=1.522E-08
+ nAlI=3.183E+07  nAlII=1.273E-07
+ nCaI=1.296E+10  nCaII=1.386E-04
+ nCrI=6.821E+13  nCrII=2.453E-04
+ nTiI=1.517E+06  nTiII=6.027E-12
+  nSI=5.789E+04   nSII=1.002E-30
+ nClI=4.306E+02  nClII=6.979E-45
+  nKI=8.542E+12   nKII=6.396E+06
+ nLiI=3.303E+06  nLiII=2.426E-05
+  nVI=4.709E+06   nVII=2.561E-11
+ nZrI=2.908E-03  nZrII=6.154E-21
+ nBeI=3.403E-04  nBeII=6.089E-33
+  nPI=1.094E+05   nPII=1.272E-30
+ ----- most abundant species [cm3] [molfrac] -----
+ nH2        7.8231E+19  0.852971672  8.5297E-01
+ nHeI       1.3347E+19  0.145526594  1.4553E-01
+ nH2O       6.5397E+16  0.000713031  7.1303E-04
+ nCH4       4.8426E+16  0.000527998  5.2800E-04
+ nSIO       4.4308E+15  0.000048310  4.8310E-05
+ nMG(OH)2   3.9265E+15  0.000042811  4.2811E-05
+ nFE(OH)2   3.5945E+15  0.000039192  3.9192E-05
+ nN2        3.4926E+15  0.000038080  3.8080E-05
+ nNH3       2.4637E+15  0.000026862  2.6862E-05
+ nH2S       1.7798E+15  0.000019406  1.9406E-05
+ nMgI       1.7759E+15  0.000019363  1.9363E-05
+ nFeI       5.2994E+14  0.000005778  5.7781E-06
+ nSIS       3.8464E+14  0.000004194  4.1938E-06
+ nCA(OH)2   3.7498E+14  0.000004088  4.0885E-06
+ nSIH4      2.5555E+14  0.000002786  2.7863E-06
+ nNaI       2.2762E+14  0.000002482  2.4818E-06
+ nALOH      2.2403E+14  0.000002443  2.4427E-06
+ nAL2O      1.1681E+14  0.000001274  1.2736E-06
+ nMGOH      9.1997E+13  0.000001003  1.0031E-06
+ nCrI       6.8206E+13  0.000000744  7.4366E-07
+ nNACL      3.7170E+13  0.000000405  4.0528E-07
+ nCO        3.4570E+13  0.000000377  3.7693E-07
+ nMGH       3.1789E+13  0.000000347  3.4660E-07
+ nTIO2      1.3507E+13  0.000000147  1.4727E-07
+ nKCL       1.0739E+13  0.000000117  1.1709E-07
+ nK I       8.5424E+12  0.000000093  9.3140E-08
+ nP4O6      7.2979E+12  0.000000080  7.9570E-08
+ nPH3       6.4628E+12  0.000000070  7.0465E-08
+ nNAOH      4.6286E+12  0.000000050  5.0467E-08
+ nALO2H     3.4842E+12  0.000000038  3.7989E-08
+ nSIH3      2.9384E+12  0.000000032  3.2038E-08
+ nNAH       2.3765E+12  0.000000026  2.5911E-08
+ nVO2       1.5446E+12  0.000000017  1.6841E-08
+ nKOH       1.3383E+12  0.000000015  1.4592E-08
+ nTIF2      1.1243E+12  0.000000012  1.2259E-08
+ nALF2O     1.0215E+12  0.000000011  1.1137E-08
+ nCAOH      8.9936E+11  0.000000010  9.8059E-09
+ nTIO       6.0396E+11  0.000000007  6.5851E-09
+ nALF       5.1029E+11  0.000000006  5.5638E-09
+ nSIH3F     4.9749E+11  0.000000005  5.4243E-09
+ n(NACL)2   3.5208E+11  0.000000004  3.8387E-09
+ nCACL2     2.7191E+11  0.000000003  2.9646E-09
+ nCRH       2.2898E+11  0.000000002  2.4966E-09
+ nH I       2.2592E+11  0.000000002  2.4633E-09
+ nPN        1.7208E+11  0.000000002  1.8762E-09
+ nHCL       1.6464E+11  0.000000002  1.7951E-09
+ nFES       1.5411E+11  0.000000002  1.6803E-09
+ nO2        9.3417E-07  0.000000000  1.0185E-26
+ nCO2       3.3398E+10  0.000000000  3.6415E-10
+ 
+ -----  where are the elements?  -----
+    Element H       1.568E+20
+                nH2 7.823E+19
+               nH2O 6.540E+16
+               nCH4 4.843E+16
+           nMG(OH)2 3.926E+15
+           nFE(OH)2 3.595E+15
+               nNH3 2.464E+15
+               nH2S 1.780E+15
+    Element He      1.335E+19
+                nHe 1.335E+19
+    Element C       4.846E+16
+               nCH4 4.843E+16
+                nCO 3.457E+13
+    Element N       9.449E+15
+                nN2 3.493E+15
+               nNH3 2.464E+15
+                nPN 1.721E+11
+    Element O       8.618E+16
+               nH2O 6.540E+16
+               nSIO 4.431E+15
+           nMG(OH)2 3.926E+15
+           nFE(OH)2 3.595E+15
+           nCA(OH)2 3.750E+14
+              nALOH 2.240E+14
+              nAL2O 1.168E+14
+              nMGOH 9.200E+13
+                nCO 3.457E+13
+              nTIO2 1.351E+13
+              nP4O6 7.298E+12
+              nNAOH 4.629E+12
+             nALO2H 3.484E+12
+               nVO2 1.545E+12
+               nKOH 1.338E+12
+             nALF2O 1.021E+12
+              nCAOH 8.994E+11
+    Element Na      2.725E+14
+                nNa 2.276E+14
+              nNACL 3.717E+13
+              nNAOH 4.629E+12
+               nNAH 2.376E+12
+           n(NACL)2 3.521E+11
+              nNACN 6.717E+09
+               nNAF 3.566E+09
+    Element Mg      5.826E+15
+                nMg 1.776E+15
+           nMG(OH)2 3.926E+15
+              nMGOH 9.200E+13
+               nMGH 3.179E+13
+    Element Si      5.074E+15
+               nSIO 4.431E+15
+               nSIS 3.846E+14
+              nSIH4 2.555E+14
+              nSIH3 2.938E+12
+             nSIH3F 4.975E+11
+    Element F       5.694E+12
+              nTIF2 1.124E+12
+             nALF2O 1.021E+12
+               nALF 5.103E+11
+             nSIH3F 4.975E+11
+              nTIF3 8.584E+10
+              nALOF 5.976E+10
+                nHF 4.818E+10
+               nMGF 1.487E+10
+             nMGCLF 4.868E+09
+               nNAF 3.566E+09
+                nKF 1.426E+09
+              nTIOF 1.251E+09
+            nSIH2F2 4.682E+08
+              nMGF2 3.191E+08
+               nCAF 2.677E+08
+              nCAF2 2.340E+08
+               nTIF 1.310E+08
+               nFEF 1.234E+08
+    Element Fe      4.125E+15
+                nFe 5.299E+14
+           nFE(OH)2 3.595E+15
+               nFES 1.541E+11
+    Element Al      4.628E+14
+              nALOH 2.240E+14
+              nAL2O 1.168E+14
+             nALO2H 3.484E+12
+             nALF2O 1.021E+12
+               nALF 5.103E+11
+              nALOF 5.976E+10
+              nALCL 3.893E+10
+             nAL2O2 1.495E+10
+    Element Ca      3.762E+14
+                nCa 1.296E+10
+           nCA(OH)2 3.750E+14
+              nCAOH 8.994E+11
+             nCACL2 2.719E+11
+               nCAH 7.385E+09
+    Element Cr      6.845E+13
+                nCr 6.821E+13
+               nCRH 2.290E+11
+               nCRS 1.263E+10
+               nCRO 4.841E+09
+    Element Ti      1.532E+13
+              nTIO2 1.351E+13
+              nTIF2 1.124E+12
+               nTIO 6.040E+11
+              nTIF3 8.584E+10
+             nTIOCL 1.737E+09
+              nTIOF 1.251E+09
+             nTICL2 3.264E+08
+            nTIOCL2 1.675E+08
+    Element S       2.165E+15
+               nH2S 1.780E+15
+               nSIS 3.846E+14
+               nFES 1.541E+11
+    Element Cl      4.959E+13
+              nNACL 3.717E+13
+               nKCL 1.074E+13
+           n(NACL)2 3.521E+11
+             nCACL2 2.719E+11
+               nHCL 1.646E+11
+             nMGCL2 5.626E+10
+              nALCL 3.893E+10
+             nFECL2 2.848E+10
+            n(KCL)2 1.574E+10
+              nMGCL 1.126E+10
+             nMGCLF 4.868E+09
+            nSIH3CL 3.744E+09
+              nCACL 3.624E+09
+             nTIOCL 1.737E+09
+              nLICL 7.233E+08
+    Element K       2.067E+13
+                 nK 8.542E+12
+               nKCL 1.074E+13
+               nKOH 1.338E+12
+                nKH 1.935E+10
+            n(KCL)2 1.574E+10
+                nKF 1.426E+09
+               nKCN 2.508E+08
+    Element Li      1.759E+09
+                nLi 3.303E+06
+              nLIOH 1.028E+09
+              nLICL 7.233E+08
+               nLIF 3.795E+06
+               nLIH 1.370E+06
+    Element V       1.568E+12
+               nVO2 1.545E+12
+                nVO 2.352E+10
+    Element Zr      5.962E+10
+              nZRO2 5.843E+10
+               nZRO 1.184E+09
+              nZRF4 3.727E+06
+    Element Be      3.762E+09
+            nBEH2O2 3.762E+09
+    Element P       3.592E+13
+              nP4O6 7.298E+12
+               nPH3 6.463E+12
+                nPN 1.721E+11
+               nPH2 8.661E+10
+               nPCH 4.212E+09
+                nP2 3.458E+09
+    Element el      0.000E+00
+                nel 2.286E+05
+                nK+ 6.396E+06
+              nALO- 3.763E+06
+            nALF2O- 2.170E+06
+               nHS- 2.366E+05
+               nNA+ 2.691E+04
+               nCL- 2.218E+04
+             nALF4- 9.366E+02
+             nALOH- 9.135E+02
+             nALF2- 7.512E+02
+ 
+ ----- supersaturation ratios -----
+ Al2O3[s]             S=1.297E+0025
+ Al2O3[l]             S=1.774E+0023
+ MgAl2O4[s]           S=1.538E+0036
+ MgAl2O4[l]           S=7.507E+0030
+ TiO2[s]              S=2.270E+0015
+ TiO2[l]              S=9.865E+0013
+ Ti4O7[s]             S=5.204E+0060
+ Ti4O7[l]             S=1.518E+0056
+ Mg2SiO4[s]           S=2.623E+0032
+ Mg2SiO4[l]           S=5.591E+0030
+ MgSiO3[s]            S=3.986E+0021
+ MgSiO3[l]            S=1.743E+0020
+ Fe[s]                S=3.641E+0008
+ Fe[l]                S=2.113E+0008
+ Fe2SiO4[s]           S=1.181E+0023
+ FeS[s]               S=4.462E+0006
+ FeS[l]               S=1.667E+0006
+ MgTi2O5[s]           S=2.682E+0041
+ MgTi2O5[l]           S=2.330E+0038
+ TiC[s]               S=3.567E+0008
+ TiC[l]               S=1.045E+0006
+ SiC[s]               S=7.168E-0001
+ SiO[s]               S=1.052E+0009
+ SiO2[s]              S=2.847E+0010
+ SiO2[l]              S=2.167E+0010
+ Zr[s]                S=1.837E+0001
+ Zr[l]                S=7.399E+0000
+ ZrO2[s]              S=5.722E+0020
+ ZrO2[l]              S=2.283E+0018
+ ZrSiO4[s]            S=8.758E+0031
+ MgO[s]               S=2.868E+0009
+ MgO[l]               S=1.565E+0007
+ FeO[s]               S=1.460E+0006
+ FeO[l]               S=5.890E+0005
+ Na2SiO3[s]           S=5.483E+0014
+ Na2SiO3[l]           S=1.477E+0014
+ NaCl[s]              S=2.201E-0002
+ NaCl[l]              S=2.081E-0002
+ MgS[s]               S=3.948E+0006
+ CaO[s]               S=7.417E+0007
+ CaO[l]               S=1.963E+0005
+ CaCl2[s]             S=2.317E-0001
+ CaCl2[l]             S=2.488E-0001
+ MgTiO3[s]            S=9.681E+0025
+ MgTiO3[l]            S=1.476E+0024
+ K2SiO3[s]            S=4.590E+0010
+ K2SiO3[l]            S=1.943E+0010
+ Ti[s]                S=1.104E+0003
+ Ti[l]                S=6.658E+0002
+ TiO[s]               S=2.379E+0012
+ TiO[l]               S=2.132E+0011
+ VO[s]                S=4.522E+0009
+ VO[l]                S=1.674E+0008
+ V2O3[s]              S=1.516E+0020
+ V2O4[s]              S=9.291E+0013
+ V2O5[s]              S=6.167E+0002
+ CaS[s]               S=2.099E+0009
+ FeS2[s]              S=7.979E-0001
+ Na2S[s]              S=1.375E+0000
+ Cr[s]                S=8.195E+0006
+ Cr[l]                S=1.923E+0006
+ CrN[s]               S=1.020E+0007
+ CaSiO3[s]            S=5.545E+0022
+ CaTiO3[s]            S=1.352E+0027
+ Ca2Al2SiO7[s]        S=2.133E+0059
+ Ca3Al2Si3O12[s]      S=1.536E+0094
+ Ca2SiO4[s]           S=6.532E+0032
+ CaAl2SiO6[s]         S=9.766E+0047
+ Ca3Si2O7[s]          S=5.674E+0055
+ Ca5P3O12F[s]         S=1.671E+0060
+ Ca3MgSi2O8[s]        S=1.024E+0066
+ CaAl2Si2O8[s]        S=1.490E+0060
+ CaTiSiO5[s]          S=5.673E+0038
+ Ca2MgSi2O7[s]        S=6.731E+0055
+ Al2SiO5[s]           S=2.367E+0035
+ CaMgSiO4[s]          S=1.006E+0033
+ CaMgSi2O6[s]         S=9.133E+0044
+ MgAl2SiO6[s]         S=1.014E+0046
+ KMg3AlSi3O10F2[s]    S=6.576E+0069
+ Mg3Al2Si3O12[s]      S=7.134E+0088
+ Ca2Al3Si3O13H[s]     S=2.881E+0092
+ CaSi2O5[s]           S=3.359E+0029
+ Ca5Si2CO11[s]        S=2.935E+0066
+ KAlSi3O8[s]          S=3.042E+0048
+ Ca5P3O13H[s]         S=8.353E+0060
+ KAlSiO4[s]           S=3.357E+0026
+ KAlSi2O6[s]          S=3.942E+0037
+ NaAlSi3O8[s]         S=7.330E+0048
+ NaAlSi2O6[s]         S=7.183E+0036
+ NaAlSiO4[s]          S=1.007E+0027
+ CaAl4Si2O12H2[s]     S=9.351E+0078
+ Ca2Al2Si3O12H2[s]    S=3.375E+0076
+ Ca2FeAl2Si3O13H[s]   S=2.639E+0083
+ Ca5Si2C2O13[s]       S=3.738E+0056
+ Ca3Fe2Si3O12[s]      S=6.084E+0075
+ KMg2Al3Si2O12H2[s]   S=7.224E+0079
+ CaFeSi2O6[s]         S=9.949E+0039
+ Mg3Cr2Si3O12[s]      S=5.465E+0080
+ K2Si4O9[s]           S=1.208E+0040
+ Mg2Al2Si3O12H2[s]    S=1.103E+0072
+ KAl3Si3O12H2[s]      S=6.303E+0067
+ KMg3AlSi3O12H2[s]    S=3.406E+0076
+ NaAl3Si3O12H2[s]     S=1.028E+0068
+ AlSi2O6H[s]          S=1.361E+0030
+ NaMg3AlSi3O12H2[s]   S=4.993E+0076
+ FeAl2O4[s]           S=3.707E+0031
+ Mg3Si4O12H2[s]       S=2.086E+0069
+ KMgAlSi4O12H2[s]     S=4.561E+0062
+ NaCrSi2O6[s]         S=2.126E+0033
+ Ca2FeAlSi3O12H2[s]   S=1.763E+0067
+ Ca2Fe2AlSi3O13H[s]   S=6.958E+0072
+ MgAl2SiO7H2[s]       S=2.915E+0040
+ CaAl2Si4O14H4[s]     S=1.943E+0069
+ KAlSi3O9H2[s]        S=2.271E+0041
+ Fe3Al2Si3O12[s]      S=3.573E+0075
+ Al2SiO6H2[s]         S=9.217E+0027
+ KFeAlSi4O12H2[s]     S=5.474E+0057
+ NaFeSi2O6[s]         S=5.140E+0027
+ NaAlSi2O7H2[s]       S=5.848E+0032
+ CaAl2Si2O10H4[s]     S=1.314E+0046
+ MgCr2O4[s]           S=6.831E+0029
+ MgAl2Si2O10H4[s]     S=5.772E+0044
+ FeTiO3[s]            S=8.841E+0021
+ AlO2H[s]             S=1.596E+0009
+ FeAl2SiO7H2[s]       S=5.367E+0035
+ Mg7Si2O14H6[s]       S=1.468E+0075
+ CaCO3[s]             S=1.789E+0000
+ Mg3Si2O9H4[s]        S=1.683E+0041
+ Al2Si2O9H4[s]        S=2.403E+0032
+ FeSiO3[s]            S=4.703E+0016
+ KFe3AlSi3O12H2[s]    S=5.802E+0061
+ CaMgC2O6[s]          S=2.931E-0002
+ CaAl2Si4O16H8[s]     S=4.854E+0056
+ FeAl2Si2O10H4[s]     S=5.384E+0039
+ Fe3Si4O12H2[s]       S=2.495E+0054
+ Cr2O3[s]             S=9.173E+0018
+ Fe2TiO4[s]           S=1.018E+0028
+ MgFe2O4[s]           S=1.771E+0017
+ MgO2H2[s]            S=1.013E+0004
+ Fe3Si2O9H4[s]        S=1.403E+0027
+ Fe2O3[s]             S=4.326E+0006
+ Fe3O4[s]             S=3.054E+0013
+ FeO2H[s]             S=8.102E-0001
+ Mg3P2O8[s]           S=4.746E+0027
+ CaF2[s]              S=1.534E+0001
+ MgF2[s]              S=2.598E-0001
+ MgF2[l]              S=3.375E-0002
+ Li2SiO3[s]           S=1.029E+0008
+ Li2SiO3[l]           S=4.759E+0007
+ Li2Si2O5[s]          S=6.308E+0018
+ Li2Si2O5[l]          S=2.055E+0018
+ Ti3O5[s]             S=1.170E+0045
+ Ti3O5[l]             S=6.948E+0039
+ Mg2TiO4[s]           S=4.332E+0035
+ Mg2TiO4[l]           S=2.244E+0031
+ TiN[s]               S=1.370E+0013
+ TiN[l]               S=9.367E+0009
+ TiH2[s]              S=1.078E+0004
+ 
+ epsH=  1.0000E+00  1.0000E+00
+ epsC=  3.0903E-04  3.0903E-04   C/(H+O+C)=  3.0876E-04
+ epsO=  5.4954E-04  5.4954E-04 (O-H)/(O+H)= -9.9890E-01
+ epsN=  6.0256E-05  6.0256E-05
+ 
+type A1
+H2O:  0.0007  0.0011
+CH4:  0.0005  0.0006
+NH3:  0.0000  0.0001
+ H2:  0.8530  0.9982
+ 
+            smchem calls =        4
+         iterations/call =     4.00
+     pre-iterations/call =    49.500
+usage of saved estimates =    75.000 %
+   dual corrections/call =     0.000
+  H-C-O corrections/call =     0.000

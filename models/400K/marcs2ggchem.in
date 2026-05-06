@@ -1,0 +1,16 @@
+# selected elements
+H He C N O Na Mg Si F Fe Al Ca Cr Ti S Cl K Li V Zr Be P el
+# name of files with molecular kp-data
+dispol_BarklemCollet.dat                ! dispol_file 
+dispol_StockKitzmann_withoutTsuji.dat   ! dispol_file2
+dispol_WoitkeRefit.dat                  ! dispol_file3
+# abundance options 1=EarthCrust, 2=Ocean, 3=Solar, 4=Meteorites
+0                     ! abund_pick
+abund_drift.in                    
+0                    ! verbose
+# equilibrium condensation?
+.false.               ! model_eqcond
+0                     ! model_dim  (0,1,2)
+.true.                ! model_pconst
+   1057.64008265317                      ! Tmax [K]
+   13.3928007149131                         ! pmax [bar]
