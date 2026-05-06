@@ -9,6 +9,7 @@ import concurrent.futures
 os.environ["MIEPYTHON_USE_JIT"] = "1"  # Set to "0" to disable JIT
 import miepython as mie
 from tqdm import tqdm
+import h5py
 print('Using Jit for Mie python',os.environ.get("MIEPYTHON_USE_JIT"))
 
 # Set POSEIDON input data paths relative to this file's location
@@ -208,13 +209,38 @@ if __name__ == '__main__':
     )
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    print(f"Saving Mie data to {output_path}")
-    with open(output_path, "w") as f:
-        f.write("r [um]\tlambda [um]\tqabs\tqsca\n")
-        
-        for i, size in enumerate(sizes):
+    output_path_h5 = os.path.splitext(output_path)[0] + ".h5"
+    print(f"Saving Mie data to {output_path_h5}")
+
+    n_sizes = len(sizes)
+    n_wl = len(wavelengths_grid)
+
+    with h5py.File(output_path_h5, "w") as f:
+        # Axes
+        f.create_dataset("sizes_um", data=sizes)
+        f.create_dataset("wavelengths_um", data=wavelengths_grid)
+
+        # Chunk per size: (1, n_wl)
+        qabs_ds = f.create_dataset(
+            "qabs",
+            shape=(n_sizes, n_wl),
+            dtype="f8",
+            chunks=(1, n_wl),
+            compression="gzip",
+            compression_opts=4,
+        )
+        qsca_ds = f.create_dataset(
+            "qsca",
+            shape=(n_sizes, n_wl),
+            dtype="f8",
+            chunks=(1, n_wl),
+            compression="gzip",
+            compression_opts=4,
+        )
+
+        for i in range(n_sizes):
             qabs, qsca = results[i]
-            for j, wl in enumerate(wavelengths_grid):
-                f.write(f"{size:.8e}\t{wl:.8e}\t{qabs[j]:.8e}\t{qsca[j]:.8e}\n")
+            qabs_ds[i, :] = qabs
+            qsca_ds[i, :] = qsca
 
     print("Mie calculations complete.")
