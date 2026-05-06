@@ -76,49 +76,22 @@ def interpolate_refractive_index(wavelengths_data, real_part, imag_part, wavelen
 
     return real_part_interp, imag_part_interp
 
-def bin_size_mie_calc(size,complex_refractive_indexs, wavelengths_grid,mie_routine):
-    # Size is in microns!!!
-
+def mie_calc(args):
+    
+    sizes, wavelengths_grid, n_grid, k_grid = args
+    
     # Define x_array and geometric cross-section
     x_array = 2 * np.pi * size / wavelengths_grid # both in microns
-    geometric_cross_section = np.pi * (size * 1e-6) ** 2  # Cross section area in m^2
+    
+    # Define the complex refractive index array
+    complex_refractive_indexs = n_grid - 1j * k_grid
 
     # Calculate the extinction cross-section using Mie theory
     qext, qsca, qback, g = mie.efficiencies_mx(complex_refractive_indexs, x_array)  # Ignoring qback as it's unused
-    # Convert to cross section (Cext or sigma ext depending on the convention)
-    extinction_cross_section = qext * geometric_cross_section
-
-    # Compute w (SSA)
-    w = qsca / qext
-
-    return extinction_cross_section, w, g
-
-def run_mie(refractive_index_data,sizes,wavelengths_grid):
-
-
-    # Process each bin size sequentially
-    kappa_ext_array = np.zeros((len(sizes), len(wavelengths_grid)))
-    w_array = np.zeros((len(sizes), len(wavelengths_grid)))
-    g_array = np.zeros((len(sizes), len(wavelengths_grid)))
-
-    for b, size in enumerate(sizes):
-
-        extinction_cross_section, w, g = bin_size_mie_calc(size, complex_refractive_indexs, wavelengths_grid, mie_routine)
-
-        kappa_ext_array[b, :] = extinction_cross_section
-        w_array[b, :] = w
-        g_array[b, :] = g
-
-        # Print progress for size bins
-        print(f"\rProcessing size bins: {b + 1}/{len(sizes)} complete", end='')
-
-    return {
-        'wavelengths_grid': wavelengths_grid,
-        'size_bins': sizes, # shape (nbin,nwave)
-        'kappa_ext': kappa_ext_array, #TODO: in future name this sigma_ext
-        'w': w_array,
-        'g': g_array
-    }
+    
+    qabs = qext - qsca  # Absorption efficiency, wanted for MARCS
+    
+    return qabs, qsca
 
 
 if __name__ == '__main__':
@@ -128,7 +101,7 @@ if __name__ == '__main__':
     material = 'H2O'
     
     #TODO correctly with MARCS grid
-    wl_path = '../data/marcs_wavelengths_um.dat'
+    wl_path = '../data/marcs_wavelengths_um.dat' #if this is set, the params below are ignored
     wl_min = 0.125  # in microns
     wl_max = 25.0  # in microns
     R = 1000  # Resolving power
@@ -136,7 +109,7 @@ if __name__ == '__main__':
     quick_plot = True
     
     # Define the size bins for the Mie calculations
-    size_bins = np.logspace(-3, 1, 1000)  # in microns
+    sizes = np.logspace(-3, 1, 1000)  # in microns
     
     ####################################################
     # Read in the refractive index
@@ -163,7 +136,12 @@ if __name__ == '__main__':
     
     ####################################################
     # Set up the wavelength grid for the Mie calculations
-    wavelengths_grid = np.logspace(np.log10(wl_min), np.log10(wl_max), int((wl_max - wl_min) * R))  # in microns
+    if wl_path is not None:
+        print(f"Loading wavelength grid from {wl_path}...")
+        wavelengths_grid = np.loadtxt(wl_path)  # in microns
+    else:
+        print(f"Creating wavelength grid from {wl_min} to {wl_max} microns with R={R}...")
+        wavelengths_grid = np.logspace(np.log10(wl_min), np.log10(wl_max), int((wl_max - wl_min) * R))  # in microns
     
     print(f"Wavelength grid shape: {wavelengths_grid.shape}")
     print(f"Wavelength grid: {wavelengths_grid} microns")
@@ -174,7 +152,7 @@ if __name__ == '__main__':
 
     # Interpolate the complex refractive index to the wl grid
     print('Interpolating refractive index...')
-    n_interp, k_interp = interpolate_refractive_index(wavelengths_data, n_data, k_data, wavelengths_grid)
+    n_grid, k_grid = interpolate_refractive_index(wavelengths_data, n_data, k_data, wavelengths_grid)
     print('Interpolation complete.')
     
     if quick_plot:
@@ -182,13 +160,13 @@ if __name__ == '__main__':
 
         # Top panel: n
         ax_n.scatter(wavelengths_data, n_data, s=10, alpha=0.7, label="original n")
-        ax_n.plot(wavelengths_grid, n_interp, lw=1.5, label="interpolated n")
+        ax_n.plot(wavelengths_grid, n_grid, lw=1.5, label="interpolated n")
         ax_n.set_ylabel("n")
         ax_n.legend()
 
         # Bottom panel: k
         ax_k.scatter(wavelengths_data, k_data, s=10, alpha=0.7, label="original k")
-        ax_k.plot(wavelengths_grid, k_interp, lw=1.5, label="interpolated k")
+        ax_k.plot(wavelengths_grid, k_grid, lw=1.5, label="interpolated k")
         ax_k.set_xscale("log")
         ax_k.set_xlabel("Wavelength (micron)")
         ax_k.set_ylabel("k")
@@ -198,73 +176,33 @@ if __name__ == '__main__':
         plt.tight_layout()
         plt.show()
     
-    quit()
-    
-    #################################################
-    # Do the Mie calculations for each size bin and save the results in an HDF5 file
-'''
+    # Create argument list for parallel processing
+    args_list = [(size, wavelengths_grid, n_grid, k_grid) for size in sizes]
 
-    # Note to me later: groups can share a material but still need separate Mie runs (different bin sizes)
-    def mie_calc_for_material(args):
-            wavelengths_grid, complex_refractive_indexs = args
-            
-            
-            
-            return group_name, mie_result
+    # Run Mie calculations in parallel
+    print("Running Mie calculations in parallel...")
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        results = list(executor.map(mie_calc, args_list))
 
-        # Prepare arguments for each group
-        args_list = [
-            (group_name, group_name_list, h5_path, ref_ind_name_dict, ref_ind_data_dict, wavelengths_grid, mie_routine)
-            for group_name in group_name_list
-        ]
-
-        # Run in parallel
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            results = list(executor.map(mie_calc_for_material, args_list))
-
-        for group_name, mie_result in results:
-            Mie_data[group_name] = mie_result
-
-    # Save to a single TXT file
+    # Save results to file
     output_path = os.path.join(
         os.path.dirname(__file__),
         '..',
         'Mie_data',
-        f"mie_data_{mie_routine}_wl_{wl_min}_{wl_max}_{R}.txt"
+        f"Mie_{material}.txt"
     )
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
     print(f"Saving Mie data to {output_path}")
-
     with open(output_path, "w") as f:
-        f.write("# Mie data output\n")
-        f.write("# wavelength_unit: micron\n")
-        f.write("# bin_size_unit: micron\n")
-        f.write("# kappa_ext_unit: m^2\n")
-        f.write("# w_unit: -\n")
-        f.write("# g_unit: -\n")
-        f.write("#\n")
-        f.write("# group_name ref_index_name\n")
-        for group_name in group_name_list:
-            f.write(f"# {group_name} {ref_ind_name_dict[group_name]}\n")
+        f.write("r [um]\tlambda [um]\tqabs\tqsca\n")
+        
+        for i, size in enumerate(sizes):
+            qabs, qsca = results[i]
+            for j, wl in enumerate(wavelengths_grid):
+                f.write(f"{size:.8e}\t{wl:.8e}\t{qabs[j]:.8e}\t{qsca[j]:.8e}\n")
 
-        for group_name in group_name_list:
-            data = Mie_data[group_name]
-            wl = data["wavelengths_grid"]
-            size_bins = data["size_bins"]
-
-            f.write("\n")
-            f.write(f"# --- GROUP: {group_name} ---\n")
-            f.write("# columns: size_bin_micron wavelength_micron kappa_ext w g\n")
-
-            for i, size in enumerate(size_bins):
-                out = np.column_stack([
-                    np.full(wl.shape, size, dtype=float),
-                    wl,
-                    data["kappa_ext"][i, :],
-                    data["w"][i, :],
-                    data["g"][i, :]
-                ])
-                np.savetxt(f, out, fmt="%.8e")
-                f.write("\n")
-
-    print(f"Saved data to {output_path}")'''
+    print("Mie calculations complete.")
+    
+    
+    quit()
