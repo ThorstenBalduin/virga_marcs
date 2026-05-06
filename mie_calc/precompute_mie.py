@@ -8,6 +8,7 @@ import concurrent.futures
 #Try to set up jit for miepython to get tha speed up
 os.environ["MIEPYTHON_USE_JIT"] = "1"  # Set to "0" to disable JIT
 import miepython as mie
+from tqdm import tqdm
 print('Using Jit for Mie python',os.environ.get("MIEPYTHON_USE_JIT"))
 
 # Set POSEIDON input data paths relative to this file's location
@@ -78,10 +79,10 @@ def interpolate_refractive_index(wavelengths_data, real_part, imag_part, wavelen
 
 def mie_calc(args):
     
-    size, wavelength, n_grid, k_grid = args
+    size, wavelength_grid, n_grid, k_grid = args
     
     # Define x_array and geometric cross-section
-    x_array = 2 * np.pi * size / wavelength # both in microns
+    x_array = 2 * np.pi * size / wavelength_grid # both in microns
     
     # Define the complex refractive index array
     complex_refractive_indexs = n_grid - 1j * k_grid
@@ -91,7 +92,7 @@ def mie_calc(args):
     
     qabs = qext - qsca  # Absorption efficiency, wanted for MARCS
     
-    return qabs, qsca # floats for given wavelength and size
+    return qabs, qsca # shape (len(wavelength_grid),) arrays of absorption and scattering efficiencies for this size bin
 
 
 if __name__ == '__main__':
@@ -176,13 +177,27 @@ if __name__ == '__main__':
         plt.tight_layout()
         plt.show()
     
-    # Create argument list for parallel processing
-    args_list = [(size, wavelength, n_grid, k_grid) for size in sizes for wavelength in wavelengths_grid]
-
-    # Run Mie calculations in parallel
+    # Run Mie calculations in parallel with a progress bar
+    # (submit one task per size so tqdm updates reliably and results stay shape-compatible)
     print("Running Mie calculations in parallel...")
+    size_args = [(size, wavelengths_grid, n_grid, k_grid) for size in sizes]
+    results = [None] * len(size_args)
+
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        results = list(executor.map(mie_calc, args_list))
+        future_to_idx = {
+            executor.submit(mie_calc, arg): i
+            for i, arg in enumerate(size_args)
+        }
+
+        for future in tqdm(
+            concurrent.futures.as_completed(future_to_idx),
+            total=len(future_to_idx),
+            desc="Mie calculations",
+            unit="size",
+            dynamic_ncols=True,
+        ):
+            i = future_to_idx[future]
+            results[i] = future.result()
 
     # Save results to file
     output_path = os.path.join(
