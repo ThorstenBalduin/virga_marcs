@@ -46,21 +46,35 @@ def read_refractive_index_files(folder_path):
             
     return full_data
 
-def interpolate_refractive_index(wavelengths, complex_refractive_indexs, wl):
+def interpolate_refractive_index(wavelengths_data, real_part, imag_part, wavelengths_interp):
     """
-    Interpolates the complex refractive index from the given wavelengths grid to the target wl grid.
+    Interpolate refractive index as separate real/imaginary float arrays.
 
     Parameters:
-        wavelengths (array): Original wavelength grid (in microns).
-        complex_refractive_indexs (array): Complex refractive index values corresponding to the original grid.
-        wl (array): Target wavelength grid (in microns).
+        wavelengths (array): Original wavelength grid (microns).
+        real_part (array): Real part of the complex refractive index corresponding to the original wavelengths.
+        imag_part (array): Imaginary part of the complex refractive index corresponding to the original
+        wl (array): Target wavelength grid (microns).
 
     Returns:
-        array: Interpolated complex refractive index values on the target grid.
+        tuple[np.ndarray, np.ndarray]:
+            real_part_interp, imag_part_interp
+            (both real-valued float arrays)
     """
-    real_interp = interp1d(wavelengths, complex_refractive_indexs.real, kind='linear', bounds_error=False, fill_value="extrapolate")
-    imag_interp = interp1d(wavelengths, complex_refractive_indexs.imag, kind='linear', bounds_error=False, fill_value="extrapolate")
-    return real_interp(wl) - 1j * imag_interp(wl)
+
+    real_interp_fn = interp1d(
+        wavelengths_data, real_part, kind='linear',
+        bounds_error=False, fill_value="extrapolate"
+    )
+    imag_interp_fn = interp1d(
+        wavelengths_data, imag_part, kind='linear',
+        bounds_error=False, fill_value="extrapolate"
+    )
+
+    real_part_interp = real_interp_fn(wavelengths_interp)
+    imag_part_interp = imag_interp_fn(wavelengths_interp)
+
+    return real_part_interp, imag_part_interp
 
 def bin_size_mie_calc(size,complex_refractive_indexs, wavelengths_grid,mie_routine):
     # Size is in microns!!!
@@ -80,18 +94,7 @@ def bin_size_mie_calc(size,complex_refractive_indexs, wavelengths_grid,mie_routi
     return extinction_cross_section, w, g
 
 def run_mie(refractive_index_data,sizes,wavelengths_grid):
-    # Extract the wavelength and refractive index values
-    wavelengths = refractive_index_data['Wavelength (um)']  # in microns
-    n_values = refractive_index_data['n']  # Real part of refractive index
-    k_values = refractive_index_data['k']  # Imaginary part of refractive index
 
-    # Convert n and k to complex refractive index
-    complex_refractive_indexs = n_values - 1j * k_values  # miepython and POSEIDON use -ve k values convention
-
-    # Interpolate the complex refractive index to the wl grid
-    print('Interpolating refractive index...')
-    complex_refractive_indexs = interpolate_refractive_index(wavelengths, complex_refractive_indexs, wavelengths_grid)
-    print('Interpolation complete.')
 
     # Process each bin size sequentially
     kappa_ext_array = np.zeros((len(sizes), len(wavelengths_grid)))
@@ -120,38 +123,46 @@ def run_mie(refractive_index_data,sizes,wavelengths_grid):
 
 if __name__ == '__main__':
     ####################################################
+    # Control values
+    folder_path = 'Refractive_indices'
+    material = 'H2O'
+    
+    #TODO correctly with MARCS grid
+    wl_path = '../data/marcs_wavelengths_um.dat'
+    wl_min = 0.125  # in microns
+    wl_max = 25.0  # in microns
+    R = 1000  # Resolving power
+    
+    quick_plot = True
+    
+    # Define the size bins for the Mie calculations
+    size_bins = np.logspace(-3, 1, 1000)  # in microns
+    
+    ####################################################
     # Read in the refractive index
     
     # load all the files in this folder
-    folder_path = os.path.join('Refractive_indices')
     print(f"Reading refractive index files from {folder_path}...")
     ref_ind_data_dict = read_refractive_index_files(folder_path)
     #print(f"Refractive index data keys: {list(ref_ind_data_dict.keys())}")
     
     # pick a material and load its data
-    material = 'H2O'
     material_ref_ind_data = ref_ind_data_dict.get(material)
     
     if material_ref_ind_data is None:
         print(f"Material '{material}' not found. Available: {list(ref_ind_data_dict.keys())}")
         quit()
     else:
-        wl_data = material_ref_ind_data['Wavelength (um)']
+        wavelengths_data = material_ref_ind_data['Wavelength (um)']
         n_data = material_ref_ind_data['n']
         k_data = material_ref_ind_data['k']
         complex_ref_ind = n_data - 1j * k_data
-        print(f"{material} wavelength range (um): min={np.min(wl_data):.6g}, max={np.max(wl_data):.6g}")
+        print(f"{material} wavelength range (um): min={np.min(wavelengths_data):.6g}, max={np.max(wavelengths_data):.6g}")
         print(f"{material} n range: min={np.min(n_data):.6g}, max={np.max(n_data):.6g}")
         print(f"{material} k range: min={np.min(k_data):.6g}, max={np.max(k_data):.6g}")
     
     ####################################################
     # Set up the wavelength grid for the Mie calculations
-        
-    #TODO correctly with MARCS grid
-    wl_min = 0.125  # in microns
-    wl_max = 25.0  # in microns
-    R = 1000  # Resolving power
-    
     wavelengths_grid = np.logspace(np.log10(wl_min), np.log10(wl_max), int((wl_max - wl_min) * R))  # in microns
     
     print(f"Wavelength grid shape: {wavelengths_grid.shape}")
@@ -159,37 +170,35 @@ if __name__ == '__main__':
     
     #################################################
     # Interpolate the refractive index to the wavelength grid
-    complex_ref_ind_interp = interpolate_refractive_index(wl_data, complex_ref_ind, wavelengths_grid)
+    # Extract the wavelength and refractive index values
 
-    # Interpolated n and k on the target wavelength grid
-    n_interp = np.real(complex_ref_ind_interp)
-    k_interp = np.imag(complex_ref_ind_interp)
+    # Interpolate the complex refractive index to the wl grid
+    print('Interpolating refractive index...')
+    n_interp, k_interp = interpolate_refractive_index(wavelengths_data, n_data, k_data, wavelengths_grid)
+    print('Interpolation complete.')
+    
+    if quick_plot:
+        fig, (ax_n, ax_k) = plt.subplots(2, 1, sharex=True, figsize=(8, 6))
 
-    fig, (ax_n, ax_k) = plt.subplots(2, 1, sharex=True, figsize=(8, 6))
+        # Top panel: n
+        ax_n.scatter(wavelengths_data, n_data, s=10, alpha=0.7, label="original n")
+        ax_n.plot(wavelengths_grid, n_interp, lw=1.5, label="interpolated n")
+        ax_n.set_ylabel("n")
+        ax_n.legend()
 
-    # Top panel: n
-    ax_n.scatter(wl_data, n_data, s=10, alpha=0.7, label="original n")
-    ax_n.plot(wavelengths_grid, n_interp, lw=1.5, label="interpolated n")
-    ax_n.set_ylabel("n")
-    ax_n.legend()
+        # Bottom panel: k
+        ax_k.scatter(wavelengths_data, k_data, s=10, alpha=0.7, label="original k")
+        ax_k.plot(wavelengths_grid, k_interp, lw=1.5, label="interpolated k")
+        ax_k.set_xscale("log")
+        ax_k.set_xlabel("Wavelength (micron)")
+        ax_k.set_ylabel("k")
+        ax_k.legend()
+        ax_k.set_yscale("log")
 
-    # Bottom panel: k
-    ax_k.scatter(wl_data, k_data, s=10, alpha=0.7, label="original k")
-    ax_k.plot(wavelengths_grid, k_interp, lw=1.5, label="interpolated k")
-    ax_k.set_xscale("log")
-    ax_k.set_xlabel("Wavelength (micron)")
-    ax_k.set_ylabel("k")
-    ax_k.legend()
-    ax_k.set_yscale("log")
-
-    plt.tight_layout()
-    plt.show()
+        plt.tight_layout()
+        plt.show()
     
     quit()
-    
-    #################################################
-    # Define the size bins for the Mie calculations
-    size_bins = np.logspace(-3, 1, 1000)  # in microns
     
     #################################################
     # Do the Mie calculations for each size bin and save the results in an HDF5 file
