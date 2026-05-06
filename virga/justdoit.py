@@ -18,7 +18,7 @@ from .direct_mmr_solver import direct_solver
 
 
 def compute(atmo, directory = None, as_dict = True, og_solver = True, 
-    direct_tol=1e-15, refine_TP = True, og_vfall=True, analytical_rg = True, do_virtual=True):
+    direct_tol=1e-15, refine_TP = True, og_vfall=True, analytical_rg = True, do_virtual=True, ext_mmr = False):
     """
     Top level program to run eddysed. Requires running `Atmosphere` class 
     before running this. 
@@ -60,7 +60,7 @@ def compute(atmo, directory = None, as_dict = True, og_solver = True,
     dict 
         Dictionary output that contains full output. See tutorials for explanation of all output.
     """
-    
+
     # if k0 is not left as default parameter and r_mon is prescribed, print warning
     if ((atmo.k0>0) or (atmo.k0<0)) and (atmo.r_mon is not None):
         print(f"""WARNING: You have prescribed the value k0 when calling VIRGA (k0 = {atmo.k0}). If r_mon is prescribed instead of N_mon,
@@ -93,6 +93,15 @@ def compute(atmo, directory = None, as_dict = True, og_solver = True,
         #gas mixing ratio, and the density
         run_gas = getattr(gas_properties, igas)
         gas_mw[i], gas_mmr[i], rho_p[i] = run_gas(mmw, mh=mh, gas_mmr=atmo.gas_mmr[igas])
+        print(gas_mmr[i])
+        if ext_mmr:
+            with open('marcs2virga.dat') as f:
+                for line in f:
+                    if line.startswith(f"# {igas}"):
+                        _, mmr = line.split(',')
+                        gas_mmr[i] = float(mmr)
+                        break
+            print(f"Overriding gas mixing ratio for {igas} with value from marcs2virga.dat: {gas_mmr[i]}")
 
         #Get mie files that are already saved in directory
         #eventually we will replace this with nice database 
