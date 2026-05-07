@@ -93,7 +93,6 @@ def compute(atmo, directory = None, as_dict = True, og_solver = True,
         #gas mixing ratio, and the density
         run_gas = getattr(gas_properties, igas)
         gas_mw[i], gas_mmr[i], rho_p[i] = run_gas(mmw, mh=mh, gas_mmr=atmo.gas_mmr[igas])
-        print(gas_mmr[i])
         if ext_mmr:
             with open('marcs2virga.dat') as f:
                 for line in f:
@@ -189,12 +188,12 @@ def compute(atmo, directory = None, as_dict = True, og_solver = True,
         return create_dict(qc, qt, rg, reff, ndz,opd, w0, g0, 
                            opd_gas,wave_in, pres_out, temp_out, condensibles,
                            mh,mmw, fsed_out, atmo.sig, atmo.dist, getattr(atmo, 'gamma_A', None), nradii,rmin, rmax, log_radii, z_out, atmo.dz_layer,
-                           mixl, atmo.kz, atmo.scale_h, z_cld)
+                           mixl, atmo.kz, atmo.scale_h, z_cld, rho_p)
     else:
         return opd, w0, g0
 
 def create_dict(qc, qt, rg, reff, ndz,opd, w0, g0, opd_gas,wave,pressure,temperature, gas_names,
-    mh,mmw,fsed,sig,dist,gamma_A,nrad,rmin,rmax,log_radii,z, dz_layer, mixl, kz, scale_h, z_cld):
+    mh,mmw,fsed,sig,dist,gamma_A,nrad,rmin,rmax,log_radii,z, dz_layer, mixl, kz, scale_h, z_cld, rho_p):
     return {
         "pressure":pressure/1e6, 
         "pressure_unit":'bar',
@@ -225,7 +224,9 @@ def create_dict(qc, qt, rg, reff, ndz,opd, w0, g0, opd_gas,wave,pressure,tempera
         'kz':kz, 
         'kz_unit':'cm^2/s',
         'scale_height':scale_h,
-        'cloud_deck':z_cld
+        'cloud_deck':z_cld,
+        'condensate_density': rho_p,
+        'condensate_density_unit': 'g/cm^3'
     }
 
 def calc_optics(nwave, qc, qt, rg, reff, ndz,radius,dr,qext, qscat,cos_qscat,sig, rmin, rmax, dist='lognormal', gamma_A=None, verbose=False):
