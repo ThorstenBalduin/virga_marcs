@@ -87,7 +87,8 @@ def make_plot(sizes_um, wavelengths_um, qabs, qsca, initial_index=0):
 		line_qext.set_ydata(y_qext)
 
 		y_max = np.max([y_qabs.max(), y_qsca.max(), y_qext.max()])
-		y_min = max(1e-3 * y_max, tiny)
+		#y_min = max(1e-3 * y_max, tiny)
+		y_min = min(y_qabs.min(), y_qsca.min(), y_qext.min())
 		if y_max <= y_min:
 			y_max = y_min * 10.0
 		ax.set_ylim(y_min, y_max)

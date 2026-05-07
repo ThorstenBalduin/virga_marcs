@@ -36,6 +36,13 @@ def read_in_mie_h5(file_path):
 
     return mie_radii, wavelengths_um, qabs, qsca
 
+def surface_area_average_radius(r_array, distribution):
+    # Calculate the surface-area-weighted average radius
+    # r_array is in cm, distribution is in cm^-3cm^-1
+    L3_L2 = np.trapezoid(distribution * np.pi * r_array**3, r_array)/np.trapezoid(distribution * np.pi * r_array**2, r_array)  # L3/L2 where Lk = integral of n(r)*pi*r^k dr
+    L2_L0 = np.sqrt(np.trapezoid(distribution * np.pi * r_array**2, r_array)/np.trapezoid(distribution, r_array)/np.pi)  # L2/L0 where L0 = integral of n(r) dr, this is the surface-area-weighted average radius
+    return L3_L2, L2_L0  
+
 if __name__ == "__main__":
     h5_path = "../Mie_data/Mie_H2O.h5"
     mie_radii, wavelength, Qabs, Qsca = read_in_mie_h5(h5_path)
@@ -44,10 +51,12 @@ if __name__ == "__main__":
     #print(mie_radii_cm)
     
     N = 1e6  # Total number of particles cm^-3
-    rg = 0.1e-4  # Geometric mean radius in cm
+    rg = 1e-4  # Geometric mean radius in cm
     sig = 2  # Geometric standard deviation
     
     distribution = lognormal(N, rg, sig, mie_radii_cm)
+    moment_avg_radius, surface_avg_radius = surface_area_average_radius(mie_radii_cm, distribution)
+    print(f"Surface-area-weighted average radius: {surface_avg_radius*1e4:.6g} microns, Moment-average radius (L3/L2, as reff in VIRGA): {moment_avg_radius*1e4:.6g} microns")
     
     integrated_number = np.trapezoid(distribution, mie_radii_cm)  # Integrate over the radius array to get total number density
     print('Total number of particles (integrated [cm^-3]):', integrated_number)
@@ -63,7 +72,7 @@ if __name__ == "__main__":
 
     k_abs, k_sca = lognormal_abs_sca_sum(mie_radii_cm, distribution, Qabs, Qsca)
     k_ext = k_abs + k_sca
-
+    
     plt.figure()
     plt.plot(wavelength, k_abs, label="Absorption")
     plt.plot(wavelength, k_sca, label="Scattering")
