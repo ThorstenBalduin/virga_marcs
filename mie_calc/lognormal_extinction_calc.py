@@ -55,6 +55,10 @@ if __name__ == "__main__":
     sig = 2  # Geometric standard deviation
     
     distribution = lognormal(N, rg, sig, mie_radii_cm)
+    k_abs, k_sca = lognormal_abs_sca_sum(mie_radii_cm, distribution, Qabs, Qsca)
+
+    ##################################################
+    # Plotting for debugging
     moment_avg_radius, surface_avg_radius = surface_area_average_radius(mie_radii_cm, distribution)
     print(f"Surface-area-weighted average radius: {surface_avg_radius*1e4:.6g} microns, Moment-average radius (L3/L2, as reff in VIRGA): {moment_avg_radius*1e4:.6g} microns")
     
@@ -69,10 +73,8 @@ if __name__ == "__main__":
     plt.title('Lognormal Size Distribution')
     plt.grid(True, which='both', alpha=0.3)
     plt.show()
-
-    k_abs, k_sca = lognormal_abs_sca_sum(mie_radii_cm, distribution, Qabs, Qsca)
-    k_ext = k_abs + k_sca
     
+    k_ext = k_abs + k_sca
     plt.figure()
     plt.plot(wavelength, k_abs, label="Absorption")
     plt.plot(wavelength, k_sca, label="Scattering")
