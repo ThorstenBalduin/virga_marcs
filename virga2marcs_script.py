@@ -11,11 +11,13 @@ from molmass import Formula
 import virga.justdoit as jdi
 import virga.justplotit as jpi
 
+#for doms mie file
+import h5py
+
 k_B = 1.380649e-16               #ergs/K
 GRAV = 2.95                      # Gravity of the planet
-mean_molecular_weight = 2.2      # atmospheric mean molecular weight
-metallicity = 10                 #atmospheric metallicity relative to Solar
 
+########################## LOADING IN FROM MARCS ###############################
 input_data_marcs='/groups/astro/mhundrup/virga_marcs/data/marcs2virga.dat'
 mieff_dir =  '/groups/astro/mhundrup/virga_marcs/virga/mieffs/'
 
@@ -38,10 +40,15 @@ for line in block:
 molecules = list(condensates.keys())
 ext_mmr = np.array(list(condensates.values()))
 
-T = np.genfromtxt(input_data_marcs, skip_header=end+1)[:,0]             #K
-P = np.genfromtxt(input_data_marcs, skip_header=end+1)[:,1]*1e-6        #bar
-kz = np.genfromtxt(input_data_marcs, skip_header=end+1)[:,2]            #
+# Need to add the read in the marcs2virga.dat
+mean_molecular_weight = 2.2      # atmospheric mean molecular weight
+metallicity = 10                 #atmospheric metallicity relative to Solar
 
+T = np.genfromtxt(input_data_marcs, skip_header=end+2)[:,0]             #K
+P = np.genfromtxt(input_data_marcs, skip_header=end+2)[:,1]*1e-6        #bar
+kz = np.genfromtxt(input_data_marcs, skip_header=end+2)[:,2]            #
+
+############################# SETTING UP VIRGA #################################
 profile = pd.DataFrame({'pressure': P, 'temperature': T, 'kz': kz})
 
 #set the run
@@ -92,3 +99,50 @@ with open(output_path, 'w') as file:
                 file.write(f"{P[i]:.6e} {0} {0} {0}\n")
             else:
                 file.write(f"{P[i]:.6e} {r[i][j]:.6e} {pp[i][j]:.6e} {n_c[i][j]:.6e}\n")
+
+def lognormal(N,rg,sig,r_array):
+    # Ackerman and Marley 2001 lognormal distribution
+    # Equation 9, can't find a later reference in the literature
+    # units are dn/dr so cm^-3cm^-1
+    
+    prefactor = N / (r_array * np.log(sig) * np.sqrt(2 * np.pi))
+    exponent = - (np.log(r_array / rg) / (np.sqrt(2) * np.log(sig)))**2
+    return prefactor * np.exp(exponent)
+
+def lognormal_abs_sca_sum(r_array, distribution, Qabs, Qsca):
+    # Integrate the absorption and scattering over the size distribution
+    # radii are in cm, Qabs and Qsca are dimensionless efficiencies, distribution is in cm^-3cm^-1
+    # r_array and distribution are shape nbins, Qabs and Qsca are shape (nbins, nwavelengths)
+    
+    integrand_abs = distribution[:, np.newaxis] * Qabs * np.pi * r_array[:, np.newaxis]**2  # cm^-3cm^-1 * dimensionless * cm^2 = cm^-1
+    integrand_sca = distribution[:, np.newaxis] * Qsca * np.pi * r_array[:, np.newaxis]**2
+    return np.trapezoid(integrand_abs, r_array, axis=0), np.trapezoid(integrand_sca, r_array, axis=0)  # Integrate over the radius array to get total absorption and scattering coefficients in cm^-1
+
+def read_in_mie_h5(file_path):
+    """Load precomputed Mie data from HDF5 file."""
+    with h5py.File(file_path, "r") as f:
+        mie_radii = f["sizes_um"][:]
+        wavelengths_um = f["wavelengths_um"][:]
+        qabs = f["qabs"][:]
+        qsca = f["qsca"][:]
+
+    # Ensure orientation is (nbins, nwavelength)
+    if qabs.shape[0] != mie_radii.size and qabs.shape[1] == mie_radii.size:
+        qabs = qabs.T
+    if qsca.shape[0] != mie_radii.size and qsca.shape[1] == mie_radii.size:
+        qsca = qsca.T
+
+    return mie_radii, wavelengths_um, qabs, qsca
+
+h5_path = "../Mie_data/Mie_H2O.h5"
+mie_radii, wavelength, Qabs, Qsca = read_in_mie_h5(h5_path)
+# use mie_radii so that everything is on the same grid
+mie_radii_cm = mie_radii * 1e-4  # Convert microns to cm for the distribution function
+#print(mie_radii_cm)
+
+N = n_c  # Total number of particles cm^-3
+rg = r  # Geometric mean radius in cm
+sig = list(all_out['scalar_inputs'].values())[2]  # Geometric standard deviation
+
+distribution = lognormal(N, rg, sig, mie_radii_cm)
+k_abs, k_sca = lognormal_abs_sca_sum(mie_radii_cm, distribution, Qabs, Qsca)
