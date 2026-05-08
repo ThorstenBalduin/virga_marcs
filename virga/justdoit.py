@@ -94,7 +94,7 @@ def compute(atmo, directory = None, as_dict = True, og_solver = True,
         run_gas = getattr(gas_properties, igas)
         gas_mw[i], gas_mmr[i], rho_p[i] = run_gas(mmw, mh=mh, gas_mmr=atmo.gas_mmr[igas])
         if ext_mmr:
-            with open('/groups/astro/mhundrup/virga_marcs/data/marcs2virga.dat') as f:
+            with open('./data/marcs2virga.dat') as f:
                 for line in f:
                     if line.startswith(f"# {igas}"):
                         _, mmr = line.split(':')
