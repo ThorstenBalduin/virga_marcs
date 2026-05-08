@@ -14,6 +14,7 @@ import virga.justplotit as jpi
 #for doms mie file
 import h5py
 from matplotlib.widgets import Slider
+import matplotlib.pyplot as plt
 
 k_B = 1.380649e-16               #ergs/K
 GRAV = 2.95                      # Gravity of the planet
@@ -119,48 +120,35 @@ def lognormal(N,rg,sig,r_array):
     
     return distribution
 
-def lognormal_abs_sca_sum_OLD(r_array, distribution, Qabs, Qsca):
-    # Integrate the absorption and scattering over the size distribution
-    # distribution is in cm^-3cm^-1, radii are in cm, Qabs and Qsca are dimensionless efficiencies
-    # distribution is shape (nz, ncond, nbins), r_array is shape (nbins,), Qabs and Qsca are shape (nbins, nwavelengths)
-    
-    # integrand shape will be (nz, ncond, nbins, nwavelengths)
-    print(np.shape(distribution), np.shape(Qabs), np.shape(r_array))
-    integrand_abs = distribution[:, :, :, np.newaxis] * Qabs[np.newaxis, np.newaxis, :, :] * np.pi * r_array[np.newaxis, np.newaxis, :, np.newaxis]**2  # cm^-3cm^-1 * dimensionless * cm^2 = cm^-1
-    integrand_sca = distribution[:, :, :, np.newaxis] * Qsca[np.newaxis, np.newaxis, :, :] * np.pi * r_array[np.newaxis, np.newaxis, :, np.newaxis]**2
-    print(np.shape(integrand_abs), np.shape(integrand_sca))
-    kappa_abs = np.trapezoid(integrand_abs, r_array, axis=1)  # Integrate over the radius array to get total absorption coefficient in cm^-1, shape (nz, nwavelengths)
-    kappa_sca = np.trapezoid(integrand_sca, r_array, axis=1)  # Integrate over the radius array to get total scattering coefficient in cm^-1, shape (nz, nwavelengths)
-    print(np.shape(kappa_abs), np.shape(kappa_sca))
-    kappa_abs = np.sum(kappa_abs, axis=1)  # Sum over condensate species to get total absorption coefficient in cm^-1, shape (nz, nwavelengths)
-    kappa_sca = np.sum(kappa_sca, axis=1)  # Sum over condensate species to get total scattering coefficient in cm^-1, shape (nz, nwavelengths)
-    print(np.shape(kappa_abs), np.shape(kappa_sca))
-    
-    return kappa_abs, kappa_sca
-    
-def lognormal_abs_sca_sum(r_array, distribution, Qabs, Qsca):
+def lognormal_abs_sca_sum_matrix(r_array, distribution, Qabs, Qsca):
     # Integrate over radius bins first (per condensate), then sum condensates.
     # distribution: (nz, ncond, nbins)
     # Qabs, Qsca expected: (ncond, nbins, nwavelengths)
     # r_array: (nbins,)
+    
+    print("We're in the matrix now")
 
     nz, ncond, nbins = distribution.shape
     nwavelengths = Qabs.shape[-1]
     
-    kappa_abs = np.zeros((nz, nwavelengths))
-    kappa_sca = np.zeros((nz, nwavelengths))
-    # integrate over bins first for each condensate, then sum across condensates
-    for ic in range(ncond):
-        print(f"Integrating over size distribution for condensate {ic+1}/{ncond}...")
-        for iz in range(nz):
-            print(f"  Layer {iz+1}/{nz}...")
-            #integrand shape will be (nbins, nwavelengths)
-            integrand_abs = distribution[iz, ic, :, np.newaxis] * Qabs[ic, :, :] * np.pi * r_array[:, np.newaxis]**2
-            integrand_sca = distribution[iz, ic, :, np.newaxis] * Qsca[ic, :, :] * np.pi * r_array[:, np.newaxis]**2
+    # Build per-bin widths dr (same length as r_array)
+    dr = np.empty_like(r_array)
+    dr[1:-1] = 0.5 * (r_array[2:] - r_array[:-2])
+    dr[0] = r_array[1] - r_array[0]
+    dr[-1] = r_array[-1] - r_array[-2]
 
-            kappa_abs[iz, :] += np.trapezoid(integrand_abs, r_array, axis=0)  # (nwavelengths)
-            kappa_sca[iz, :] += np.trapezoid(integrand_sca, r_array, axis=0)
-
+    # Geometric factor (nz, ncond, nbins)
+    factor = distribution * np.pi * r_array**2 * dr
+    
+    factor_2D = factor.reshape(nz, ncond*nbins)
+    Qabs_2D = Qabs.reshape(ncond*nbins, nwavelengths)
+    Qsca_2D = Qsca.reshape(ncond*nbins, nwavelengths)
+    
+    kappa_abs = factor_2D @ Qabs_2D  # shape (nz, nwavelengths)
+    kappa_sca = factor_2D @ Qsca_2D  # shape (nz, nwavelengths)
+    
+    print('done')
+            
     return kappa_abs, kappa_sca # shape (nz, nwavelengths) 
 
 def read_in_mie_h5(file_path):
@@ -199,7 +187,7 @@ for i, igas in enumerate(molecules):
 sig = list(all_out['scalar_inputs'].values())[2]  # Geometric standard deviation, is a scalar
 
 distribution = lognormal(n_c, rg, sig, mie_radii_cm)
-k_abs, k_sca = lognormal_abs_sca_sum(mie_radii_cm, distribution, Qabs_all, Qsca_all)
+k_abs, k_sca = lognormal_abs_sca_sum_matrix(mie_radii_cm, distribution, Qabs_all, Qsca_all)
 
 # Now we need to convert from cm^-1 to cm^2/g to compare with the gas opacities, 
 # divide by the gas density in g/cm^3, which is rho_gas = P/(k_B*T) * mean_molecular_weight * m_H
@@ -218,63 +206,66 @@ with open(output_path, 'w') as file:
         for ip, p in enumerate(P[:-1]):
             file.write(f"{waveno:.6e} {p*1e6:.6e} {kappa_abs_cm2_per_g[ip, -iw]:.6e} {kappa_sca_cm2_per_g[ip, -iw]:.6e}\n")
             
-            import matplotlib.pyplot as plt
 
-            # Re-read saved opacity table
-            opacity_file = "./data/virga_mie_opacities.dat"
-            df_op = pd.read_csv(
-                opacity_file,
-                sep=r"\s+",
-                skiprows=1,
-                names=["wavenumber_cm1", "pressure_dyn_cm2", "kappa_abs_cm2_g", "kappa_sca_cm2_g"],
-            )
+# Re-read saved opacity table
+opacity_file = "./data/virga_mie_opacities.dat"
+df_op = pd.read_csv(
+    opacity_file,
+    sep=r"\s+",
+    skiprows=1,
+    names=["wavenumber_cm1", "pressure_dyn_cm2", "kappa_abs_cm2_g", "kappa_sca_cm2_g"],
+)
 
-            # Convert to wavelength in microns for plotting
-            df_op["wavelength_um"] = 1e4 / df_op["wavenumber_cm1"]
+# Convert to wavelength in microns for plotting
+df_op["wavelength_um"] = 1e4 / df_op["wavenumber_cm1"]
 
-            pressures = np.sort(df_op["pressure_dyn_cm2"].unique())
+pressures = np.sort(df_op["pressure_dyn_cm2"].unique())
 
-            # Initial pressure slice
-            p0 = pressures[0]
-            d0 = df_op[df_op["pressure_dyn_cm2"] == p0].sort_values("wavelength_um")
+# Initial pressure slice
+p0 = pressures[0]
+d0 = df_op[df_op["pressure_dyn_cm2"] == p0].sort_values("wavelength_um")
 
-            fig, ax = plt.subplots(figsize=(8, 5))
-            plt.subplots_adjust(bottom=0.22)
+fig, ax = plt.subplots(figsize=(8, 5))
+plt.subplots_adjust(bottom=0.22)
 
-            line_abs, = ax.plot(d0["wavelength_um"], d0["kappa_abs_cm2_g"], label="kappa_abs")
-            line_sca, = ax.plot(d0["wavelength_um"], d0["kappa_sca_cm2_g"], label="kappa_sca")
+line_abs, = ax.plot(d0["wavelength_um"], d0["kappa_abs_cm2_g"], label="kappa_abs")
+line_sca, = ax.plot(d0["wavelength_um"], d0["kappa_sca_cm2_g"], label="kappa_sca")
+line_ext, = ax.plot(d0["wavelength_um"], d0["kappa_abs_cm2_g"] + d0["kappa_sca_cm2_g"], label="kappa_ext", linestyle="--")
 
-            ax.set_xlabel("Wavelength (µm)")
-            ax.set_ylabel("Opacity (cm$^2$/g)")
-            ax.set_yscale("log")
-            ax.set_title(f"Pressure = {p0:.3e} dyn/cm² ({p0*1e-6:.3e} bar)")
-            ax.legend()
-            ax.grid(alpha=0.3)
+ax.set_xlabel("Wavelength (µm)")
+ax.set_ylabel("Opacity (cm$^2$/g)")
+ax.set_yscale("log")
+ax.set_xscale("log")
+ax.set_title(f"Pressure = {p0:.3e} dyn/cm² ({p0*1e-6:.3e} bar)")
+ax.legend()
+ax.grid(alpha=0.3)
 
-            slider_ax = plt.axes([0.18, 0.08, 0.68, 0.04])
-            p_slider = Slider(
-                ax=slider_ax,
-                label="Pressure index",
-                valmin=0,
-                valmax=len(pressures) - 1,
-                valinit=0,
-                valstep=1,
-            )
+slider_ax = plt.axes([0.18, 0.08, 0.68, 0.04])
+p_slider = Slider(
+    ax=slider_ax,
+    label="Pressure index",
+    valmin=0,
+    valmax=len(pressures) - 1,
+    valinit=0,
+    valstep=1,
+)
 
-            def _update(val):
-                idx = int(p_slider.val)
-                p = pressures[idx]
-                d = df_op[df_op["pressure_dyn_cm2"] == p].sort_values("wavelength_um")
+def _update(val):
+    idx = int(p_slider.val)
+    p = pressures[idx]
+    d = df_op[df_op["pressure_dyn_cm2"] == p].sort_values("wavelength_um")
 
-                line_abs.set_xdata(d["wavelength_um"].to_numpy())
-                line_abs.set_ydata(d["kappa_abs_cm2_g"].to_numpy())
-                line_sca.set_xdata(d["wavelength_um"].to_numpy())
-                line_sca.set_ydata(d["kappa_sca_cm2_g"].to_numpy())
+    line_abs.set_xdata(d["wavelength_um"].to_numpy())
+    line_abs.set_ydata(d["kappa_abs_cm2_g"].to_numpy())
+    line_sca.set_xdata(d["wavelength_um"].to_numpy())
+    line_sca.set_ydata(d["kappa_sca_cm2_g"].to_numpy())
+    line_ext.set_xdata(d["wavelength_um"].to_numpy())
+    line_ext.set_ydata((d["kappa_abs_cm2_g"] + d["kappa_sca_cm2_g"]).to_numpy())
 
-                ax.relim()
-                ax.autoscale_view()
-                ax.set_title(f"Pressure = {p:.3e} dyn/cm² ({p*1e-6:.3e} bar)")
-                fig.canvas.draw_idle()
+    ax.relim()
+    ax.autoscale_view()
+    ax.set_title(f"Pressure = {p:.3e} dyn/cm² ({p*1e-6:.3e} bar)")
+    fig.canvas.draw_idle()
 
-            p_slider.on_changed(_update)
-            plt.show()
+p_slider.on_changed(_update)
+plt.show()
