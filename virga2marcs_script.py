@@ -69,6 +69,7 @@ a.ptk(df = profile)
 all_out = jdi.compute(a, as_dict=True,
                     directory=mieff_dir, ext_mmr=ext_mmr)
 
+sig = list(all_out['scalar_inputs'].values())[2]  # Geometric standard deviation, is a scalar
 
 pp = np.zeros((len(P[0:52]), len(molecules)))
 n_c = np.zeros((len(P[0:52]), len(molecules)))
@@ -87,7 +88,7 @@ for i, igas in enumerate(molecules):
     for j in range(len(mmr_c)):                         # r, mmr_c and P, T arent same lengths
         pp[j][i] = (mean_molecular_weight/mass_igas) * P[j]*1e6 * (mmr_tot[j] - mmr_c[j])         #dyn/cm^2
         if rg[j][i] > 0:
-            n_c[j][i] = (3*mmr_c[j]*mean_molecular_weight* cgs_mass_H *(P[j]*1e6))/(4*np.pi*rg[j][i]**3*rho_p*k_B*T[j])   #number density
+            n_c[j][i] = (3*mmr_c[j]*mean_molecular_weight* cgs_mass_H *(P[j]*1e6))/(4*np.pi*rg[j][i]**3*np.exp(4.5*np.log(sig)**2)*rho_p*k_B*T[j])   #number density
 
 final_dat = np.vstack([rg, pp, n_c])
 
@@ -183,8 +184,6 @@ for i, igas in enumerate(molecules):
     Qabs_all[i, :, :] = Qabs
     Qsca_all[i, :, :] = Qsca
     #print(mie_radii_cm)
-
-sig = list(all_out['scalar_inputs'].values())[2]  # Geometric standard deviation, is a scalar
 
 distribution = lognormal(n_c, rg, sig, mie_radii_cm)
 k_abs, k_sca = lognormal_abs_sca_sum_matrix(mie_radii_cm, distribution, Qabs_all, Qsca_all)
